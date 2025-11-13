@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example F</title>
+  <style>
+    body{
+        background: #232a34;
+        position: relative;
+    }
+    body::before{
+        content: '';
+        position: fixed;
+        z-index: 0;
+        top: 0; left: 0; right: 0; bottom: 0;
+        pointer-events: none;
+        --blue-x: 60%;
+        --blue-y: 20%;
+        --copper-x: 20%;
+        --copper-y: 80%;
+        background: radial-gradient(ellipse at var(--blue-x) var(--blue-y), rgba(58,124,165,0.13) 0%, rgba(35,42,52,0.0) 60%),
+                    radial-gradient(ellipse at var(--copper-x) var(--copper-y), rgba(185,122,86,0.08) 0%, rgba(35,42,52,0.0) 70%);
+        transition: background 0.2s;
+    }
+
+    @font-face {
+      font-family: 'Playfair Display';
+      src: url('../fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+    }
+    
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    body > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5em;
+    }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 20vw;
+      color: #3a7ca5;
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 12px rgba(58,124,165,0.18);
+      margin-bottom: 0em;
+      user-select: none;
+    }
+    .subtitle {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 4vw;
+      color: #bfc3c9;
+      letter-spacing: 0.2em;
+      margin: 0;
+    }
+    .blue-divider {
+      border: none;
+      border-top: 3px solid #3a7ca5;
+      width: 60px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+    <div>
+        <h1 class="logo-text">FraBo</h1>
+        <p class="subtitle">-- Вдохновлено прошлым, --<br>создано для вечности</p>
+        <hr class="blue-divider"/>
+      </div>
+</body>
+</html> 

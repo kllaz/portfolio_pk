@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Portfolio</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="../pics/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="vectors">
+            <img src="../images/Vector 1.svg" class="vector-1" />
+            <img src="../images/Vector 2.svg" class="vector-2" />
+            <img src="../images/Vector 3.svg" class="vector-3" />
+            <img src="../images/Vector 4.svg" class="vector-4" />
+            <img src="../images/Vector 5.svg" class="vector-5" />
+            <img src="../images/Vector 6.svg" class="vector-6" />
+        </div>
+        <header>
+            <div class="header-content">
+                <div class="left-corner">
+                    <div class="link-list">
+                        <a href="https://t.me/k_laz"><img src="../images/telegram.svg" alt="tg"/></a>
+                        <a href="https://www.linkedin.com/in/%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD-%D0%BF%D0%BE%D0%BA%D0%B0%D0%BB%D0%BE-839014308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="../images/linkedin.svg" alt="linkedin"/></a>
+                        <a href="mailto:pokalo06ka#gmail.com"><img src="../images/google.svg" alt="google"></a>
+                    </div>
+                </div>
+                <div class="right-corner">
+                    <div class="choose-language">
+                        <a href="#">by</a>
+                        <a href="#">en</a>
+                    </div>
+                </div>
+                <div class="introduce">
+                    <div class="content-block">
+                        <h2>Константин</h2>
+                        <img src="../images/pfp.png"\>
+                        <h2>Покало</h2>
+                    </div>
+                </div>
+                <div class="navigate" id="source">
+                    <div class="link-list" >
+                        <div class="link">
+                            <a href="#" class="active" id="active" onclick="changeTopic(event)">Frontend</a>
+                            <div id="active-block"></div>
+                        </div>
+                        <div class="link inactive">
+                            <a href="#" onclick="changeTopic(event)">Design</a>
+                            <div></div>
+                        </div>
+                        <div class="link inactive">
+                            <a href="#" onclick="changeTopic(event)">Economics</a>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main-content" id="main-content">
+        </div>
+    </div>  
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="index.js" type="text/babel"></script>
+</body>
