@@ -3,7 +3,7 @@
   "name": "portfolio",
   "builds": [
     {
-      "src": "main/**/*",
+      "src": "main/",
       "use": "@vercel/static"
     }
   ],
