@@ -229,7 +229,7 @@ div.welcome-window .caption {
 div.buttons {
   margin-top: 5vh;
   display: flex;
-  gap: 10vw;
+  gap: 5vw;
 }
 div.buttons button {
   border-radius: 3vw;
@@ -279,4 +279,19 @@ div.buttons button.chat:hover p {
 }
 div.buttons button.chat:hover svg {
   stroke: white;
+}
+
+/*slider*/
+template {
+  display: block;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+template div.report-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+template div.report-list div {
+  border-radius: 1vw;
 }/*# sourceMappingURL=styles.css.map */

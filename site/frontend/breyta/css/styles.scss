@@ -184,7 +184,7 @@ div.welcome-window{
 div.buttons{
     margin-top: 5vh;
     display: flex;
-    gap: 10vw;
+    gap: 5vw;
     button{
         border-radius: 3vw;
         padding: 1vw 2vw;
@@ -216,5 +216,18 @@ div.buttons{
         background-color: black;
         p{color: white};
         svg{stroke: white;}
+    }
+}
+
+/*slider*/
+
+template{
+    display: block;
+    height: fit-content;
+    div.report-list{
+        display: flex;
+        flex-direction: row;
+        gap: 2vw;
+        div{border-radius: 1vw;}
     }
 }

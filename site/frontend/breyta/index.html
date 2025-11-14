@@ -3,6 +3,7 @@
     <title>Breyta</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="import" href="report-slider.html">
     <link rel="icon" href="pics/favicon.svg" type="image/svg+xml">
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/BipQc3308PcZzYRQzAcqfpn0q5a2/uploads/1762265028354-favicon-32x32.png">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -81,9 +82,36 @@
                     </button>
                 </div>
             </div>
+        
+            <div id="app">
+                <report-slider></report-slider>
+            </div>
         </div>
+    </div>  
+
+    
+<template id="report-slider">
+    <div class="reports">
+        <div class="report-list">
+            <div class="tab" :class="{active: activeIndex === 0}" @click="activeIndex = 0">
+                <h1>Product prioritisation</h1>
+                <p class="small">Weekly on Mondays at 7am</p>
+            </div>
+            <div class="tab" :class="{active: activeIndex === 1}" @click="activeIndex = 1">
+                <h1>Revenue & Performance</h1>
+                <p class="small">Monthly on the 1st at 8am</p>
+            </div>
+            <div class="tab" :class="{active: activeIndex === 2}" @click="activeIndex = 2">
+                <h1>Improve sales pitch</h1>
+                <p class="small">Weekly on Wednesdays at 9am</p>
+            </div>
+        </div>
+        <div id="reportContent"></div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/script.js" defer></script>
+</template>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>
