@@ -281,17 +281,36 @@ div.buttons button.chat:hover svg {
   stroke: white;
 }
 
-/*slider*/
-template {
-  display: block;
-  height: -moz-fit-content;
-  height: fit-content;
+/*slider: template*/
+div.reports {
+  margin-top: 5vh;
 }
-template div.report-list {
+
+div.report-list {
   display: flex;
   flex-direction: row;
   gap: 2vw;
 }
-template div.report-list div {
+div.report-list div {
   border-radius: 1vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+div.report-list div h1, div.report-list div p {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+div.report-list div h1 {
+  font-size: 1rem;
+}
+div.report-list div p {
+  font-size: 0.825rem;
+  font-weight: normal;
+}
+div.report-list div:not(.active):hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+div.report-list div.active {
+  background-color: white;
+  filter: drop-shadow(0.2vw 0.1vw 0.3vw rgba(0, 0, 0, 0.1));
 }/*# sourceMappingURL=styles.css.map */
