@@ -3,7 +3,7 @@ function FrontendSlider() {
         {id:1, image: "../images/slide_1.png",  title:"FraBo Jewelry", link:"../frontend/frabo/index.html",
             desc: [<i>Курсовой проект.</i>, 
                 "\n\nДля написания страницы использованы препроцессор SCSS, модуль flex, медиа-запрос @media и css-правила @font-face, @keyframes, JS-библиотека JQuery: \n• SCSS: удобнее классического CSS;\n• Flex, @media: Адаптивный дизайн, мобильная версия;\n• @font-face: подключение шрифтов (Montserrat, Playfair_Display);\n• @keyframes: создание анимации пульсирующего текста\n• JQuery: реализация бургер-меню в мобильной версии."], },
-        {id:2, image: "../images/slide_1.png", title:"Example 2", desc: "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text "},
+        {id:2, image: "../images/slide_2.png", title:"Breyta", link:"../frontend/breyta/index.html", desc: "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text "},
         {id:3, image: "../images/slide_1.png", title:"Example 3", desc: "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text "},
     ];
     const [index, setIndex] = React.useState(0);
