@@ -29,6 +29,18 @@ body {
 
 /* text */
 
+@font-face {
+    font-family: Tartuffo;
+    src: url('../fonts/Tartuffo_Trial-Regular-BF643371db1355b.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-Regular.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
 .regular{
     font-size: 1.125rem;
 }
