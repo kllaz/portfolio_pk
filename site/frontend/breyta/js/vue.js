@@ -10,6 +10,7 @@ const ReportSlider = {
                     title: 'TaskFlow AI: User feedback analysis for product iteration',
                     dateInfoCur: 'Aug 7, 2025, 10:01 AM',
                     dateInfoNext: 'Aug 15, 2025, 09:00 AM',
+                    insightSubtitle: 'Key Insights',
                     analyzed: '156 support tickets, 19 user interviews, 24 sales calls, 44cs calls',
                     insights: [
                         {
@@ -26,7 +27,7 @@ const ReportSlider = {
                         },
                         {
                             insight: 'Pricing Tier Validation: Enterprise Gap Identified',
-                            insightsInfo: 'Mid-market customers (50-200 users) find Pro plan limiting but Enterprise too expensive. Market gap represents 31% potential revenue increase.'
+                            insightInfo: 'Mid-market customers (50-200 users) find Pro plan limiting but Enterprise too expensive. Market gap represents 31% potential revenue increase.'
                         }
                     ],
                     changes: [
@@ -57,22 +58,23 @@ const ReportSlider = {
                     title: 'How is our revenue and business performance trending?',
                     dateInfoCur: 'Sep 1, 2025, 8:01 AM',
                     dateInfoNext: 'Oct 1, 2025, 8:00 AM',
+                    updatesSubtitle: 'Updates',
                     analyzed: '156 files',
                     updates: [
                         {
-                            updates: 'Combined Ratio Improvement',
+                            update: 'Combined Ratio Improvement',
                             updateInfo: `September combined ratio improved to 71.4% from August's 74.8%, driven primarily by 23% reduction in weather-related property claims and enhanced underwriting protocols`,
                         },
                         {
-                            updates: 'Premium Revenue Growth Sustained',
+                            update: 'Premium Revenue Growth Sustained',
                             updateInfo: `Total premium revenue of NOK 12,458,739 represents 3.2% month-over-month growth, with commercial policies showing strongest performance at 15% increase.`,
                         },
                         {
-                            updates: 'Customer Experience Metrics Strengthened',
+                            update: 'Customer Experience Metrics Strengthened',
                             updateInfo: `NPS improved from 68 to 73, while policy renewal rate maintained at 94.2%. Claims settlement time reduced to 4.2 days following digital process enhancements.`,
                         },
                         {
-                            updates: 'Capital Position Remains Strong',
+                            update: 'Capital Position Remains Strong',
                             updateInfo: `Solvency II ratio at 186% provides comfortable buffer above regulatory requirements. Investment portfolio outperformed benchmark by 0.4% this month.`,
                         },
                     ],
@@ -108,22 +110,23 @@ const ReportSlider = {
                     title: 'How can I improve my sales conversations?',
                     dateInfoCur: 'Aug 7, 2025, 9:01 AM',
                     dateInfoNext: 'Aug 14, 2025, 09:00 AM',
+                    updatesSubtitle: 'Updates',
                     analyzed: '67 files',
                     updates: [
                         {
-                            updates: 'Discovery Questions Gap Identified',
+                            update: 'Discovery Questions Gap Identified',
                             updateInfo: `Only 35% of calls include pain point qualification. Open-ended questions early in conversations correlate with higher close rates.`
                         },
                         {
-                            updates: 'Strong Demo Performance',
+                            update: 'Strong Demo Performance',
                             updateInfo: `Product demonstrations consistently generate positive responses and advance deals to next stage with 78% progression rate.`
                         },
                         {
-                            updates: 'Follow-up Timing Critical',
+                            update: 'Follow-up Timing Critical',
                             updateInfo: `Deals with 24-48 hour follow-up have 3x higher close rates than those with delayed responses beyond 72 hours.`
                         },
                         {
-                            updates: 'Price Objection Handling Gap',
+                            update: 'Price Objection Handling Gap',
                             updateInfo: `Price objections often go unaddressed in 67% of calls. Value-based selling approach shows stronger conversion in successful calls.`
                         },
                     ],

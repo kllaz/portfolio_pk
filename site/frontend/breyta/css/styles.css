@@ -284,6 +284,46 @@ div.buttons button.chat:hover svg {
 /*slider: template*/
 div.reports {
   margin-top: 5vh;
+  width: 45vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.reports div#reportContent {
+  margin-top: 5vh;
+  background-color: white;
+  filter: drop-shadow(0.2vw 0.1vw 0.3vw rgba(0, 0, 0, 0.1));
+  border-radius: 0.5vw;
+  text-align: left;
+}
+div.reports div.hr {
+  height: 0.05vw;
+  background-color: hsl(var(--main-color)/0.1);
+}
+div.reports div.report-wrapper {
+  padding: 4vh 2vw;
+}
+div.reports div.report-wrapper p.date {
+  margin-top: 1vh;
+  color: hsl(var(--main-color)/0.7);
+}
+div.reports div.report-wrapper p.analysis-caption {
+  background-color: hsl(var(--main-color)/0.2);
+  margin-top: 1vh;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.3vh 0.7vw;
+  border-radius: 1vw;
+  font-weight: 400;
+}
+div.reports div.report-wrapper p.list-title {
+  font-weight: 700;
+}
+div.reports div.report-wrapper ul {
+  padding-left: 1.125rem;
+}
+div.reports div.report-wrapper ul li {
+  margin-top: 3vh;
+  line-height: 2.5vh;
 }
 
 div.report-list {

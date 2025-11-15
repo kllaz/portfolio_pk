@@ -220,7 +220,48 @@ div.buttons{
 }
 
 /*slider: template*/
-div.reports{margin-top: 5vh;}
+div.reports{
+    margin-top: 5vh;
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto;
+    div#reportContent{
+        margin-top: 5vh;
+        background-color: white;
+        filter: drop-shadow(.2vw .1vw .3vw rgba(0,0,0,0.1));
+        border-radius: .5vw;
+        text-align: left;
+        div.keyinsights, div.upadtes{
+            
+        }
+    }
+    div.hr{
+        height: .05vw;
+        background-color: hsl(var(--main-color) / 0.1);
+    }
+    div.report-wrapper{
+        padding: 4vh 2vw;
+        p.date{margin-top: 1vh;  color: hsl(var(--main-color) / 0.7);}
+        p.analysis-caption{
+            background-color: hsl(var(--main-color) / 0.2);
+            margin-top: 1vh;
+            width: fit-content;
+            padding: .3vh .7vw;
+            border-radius: 1vw;
+            font-weight: 400;
+        }
+        p.list-title{
+            font-weight: 700;
+        }
+        ul{
+            padding-left: 1.125rem;
+            li{
+                margin-top: 3vh;
+                line-height: 2.5vh;
+            }
+        }
+    }
+}
 div.report-list{
     display: flex;
     flex-direction: row;
