@@ -231,9 +231,6 @@ div.reports{
         filter: drop-shadow(.2vw .1vw .3vw rgba(0,0,0,0.1));
         border-radius: .5vw;
         text-align: left;
-        div.keyinsights, div.upadtes{
-            
-        }
     }
     div.hr{
         height: .05vw;
@@ -259,6 +256,23 @@ div.reports{
                 margin-top: 3vh;
                 line-height: 2.5vh;
             }
+        }
+        a#openAnalysis{
+            margin-top: 3vh;
+            cursor: pointer;
+            border-radius: 2vw;
+            width: fit-content;
+            padding: 1vh 2vw;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border: .1rem solid hsl(var(--main-color));
+            transition: all .3s ease-in-out;
+            svg{margin-right: 1vw;}
+        }
+        a#openAnalysis:hover{background-color: hsl(var(--main-color) / 0.2);}
+        div.centered:hover{
+            
         }
     }
 }
@@ -288,4 +302,17 @@ div.report-list{
         background-color: white;
         filter: drop-shadow(.2vw .1vw .3vw rgba(0,0,0,0.1));
     }
+}
+div.full-analysis{display: none;}
+div.changed{
+    padding: 4vh 2vw;
+    background-color: hsl(var(--main-color) / 0.1);
+    border-radius: 1vw;
+    box-shadow: 0 .1vw .5vw rgba(0,0,0,0.1);
+    border: .1rem solid hsl(var(--main-color) /0.15);
+}
+div.centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
