@@ -184,7 +184,7 @@ div.welcome-window{
 div.buttons{
     margin-top: 5vh;
     display: flex;
-    gap: 5vw;
+    gap: 1vw;
     button{
         border-radius: 3vw;
         padding: 1vw 2vw;
@@ -224,12 +224,17 @@ div.reports{margin-top: 5vh;}
 div.report-list{
     display: flex;
     flex-direction: row;
-    gap: 2vw;
-    div{
-        border-radius: 1vw;
+    align-items: center;
+    justify-content: center;
+    gap: .4vw;
+    div.tab{
+        border-radius: .3vw;
         background-color: rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: all ease-in-out .3s;
+        padding: .5vw 3vw .5vw 1vw;
+        text-align:left;
+        line-height: 1.2vw;
         h1,p{font-family: Inter, ui-sans-serif, system-ui, sans-serif;}
         h1{font-size: 1rem;}
         p{font-size: .825rem; font-weight: normal;}
