@@ -4,6 +4,7 @@
   --color1: 25 93% 70%;
   --color2: 51 90% 70%;
   --color3: 35 90% 70%;
+  --button-color: 60 96% 79%;
   --rem: 16px;
   --gradient-background: linear-gradient(135deg,
       hsl(var(--color1)),
@@ -252,7 +253,7 @@ div.buttons button.try {
   background-color: hsl(var(--main-color));
 }
 div.buttons button.try p {
-  color: hsl(60, 96%, 79%);
+  color: hsl(var(--button-color));
   font-size: 1.125rem;
   font-weight: 400;
 }
@@ -344,6 +345,7 @@ div.reports div.report-wrapper a#openAnalysis svg {
 div.reports div.report-wrapper a#openAnalysis:hover {
   background-color: hsl(var(--main-color)/0.2);
 }
+
 div.report-list {
   display: flex;
   flex-direction: row;
@@ -394,4 +396,53 @@ div.centered {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+div.trusted {
+  margin: 20vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div.trusted h3 {
+  margin-bottom: 5vh;
+  color: hsl(var(--main-color)/0.6);
+}
+div.trusted div.trusted-list {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  gap: 1.5vw;
+  display: flex;
+}
+div.trusted div.trusted-list div {
+  display: flex;
+  align-items: center;
+}
+div.trusted div.trusted-list img {
+  width: 6rem;
+  height: auto;
+  filter: sepia(0.5) grayscale(70%) contrast(1) brightness(0);
+  opacity: 0.6;
+}
+
+div.steps {
+  display: flex;
+  flex-direction: row;
+}
+div.steps button {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  border: none;
+  background-color: hsl(var(--main-color));
+}
+div.steps button svg {
+  color: hsl(var(--button-color));
+}
+div.steps div.slide-content {
+  width: 48rem;
+  height: 28.125rem;
+  background-color: white;
+  border-radius: 0.5vw;
 }/*# sourceMappingURL=styles.css.map */

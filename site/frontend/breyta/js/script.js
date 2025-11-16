@@ -7,6 +7,14 @@ const app = Vue.createApp({
 
 app.mount('#app');
 
+const slider = Vue.createApp({
+    components:{
+        FlowSlider
+    }
+});
+
+slider.mount('#slider');
+
 //open analysis
 //const clickToOpen = document.getElementById('openAnalysis');
 function openAnalysis () {

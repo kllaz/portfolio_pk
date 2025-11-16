@@ -168,7 +168,34 @@ const ReportSlider = {
     }
 };
 
+const FlowSlider = {
+    name: 'FlowSlider',
+    template: '#flow-slider',
+    data() {
+        return{
+            activeIndex: 0,
+            tabs: [
+
+            ],
+        };
+    },
+
+    computed: {
+        currentSlide() {
+            return this.tabs[this.activeIndex];
+        }
+    }
+}
+
 /*
+const ReportSlider = {
+    name: 'ReportSlider',
+    template: '#report-slider',
+    data() {
+        return{
+
+
+
 {
     id: '',
     title: '',

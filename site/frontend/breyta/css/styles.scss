@@ -4,6 +4,7 @@
     --color1: 25 93% 70%; //orange
     --color2: 51 90% 70%; //yellow
     --color3: 35 90% 70%; //brighter orange
+    --button-color: 60 96% 79%; //brighter yellow
     --rem: 16px;
     --gradient-background: linear-gradient(135deg,
         hsl(var(--color1)),
@@ -199,7 +200,7 @@ div.buttons{
         svg{transition: stroke 0.3s ease-in;}
     }
     button.try{
-        p{color: hsl(60 96% 79%); font-size: 1.125rem; font-weight: 400};
+        p{color: hsl(var(--button-color)); font-size: 1.125rem; font-weight: 400};
         background-color: hsl(var(--main-color));
     }
     button.try:hover{
@@ -271,9 +272,6 @@ div.reports{
             svg{margin-right: 1vw;}
         }
         a#openAnalysis:hover{background-color: hsl(var(--main-color) / 0.2);}
-        div.centered:hover{
-            
-        }
     }
 }
 div.report-list{
@@ -315,4 +313,48 @@ div.centered{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+div.trusted{
+    margin: 20vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h3{
+        margin-bottom: 5vh;
+        color: hsl(var(--main-color) / 0.6);
+    }
+    div.trusted-list{
+    display: grid;
+        grid-template-columns: repeat(6, auto);
+        gap: 1.5vw;
+        display: flex;
+        div{display: flex;align-items: center;}
+        img{
+            width: 6rem;
+            height: auto;
+            filter: sepia(.5) grayscale(70%) contrast(1) brightness(0);
+            opacity: .6;
+        }
+    }
+}
+div.steps{
+    display: flex;
+    flex-direction: row;
+    button{
+        width: 5vw;
+        height: 5vw;
+        border-radius: 5vw;
+        border: none;
+        background-color: hsl(var(--main-color));
+        svg{
+            color: hsl(var(--button-color));
+        }
+    }
+    div.slide-content{
+        width: 48rem;
+        height: 28.125rem;
+        background-color: white;
+        border-radius: .5vw;
+    }
 }

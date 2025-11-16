@@ -3,7 +3,6 @@
     <title>Breyta</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="import" href="report-slider.html">
     <link rel="icon" href="pics/favicon.svg" type="image/svg+xml">
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/BipQc3308PcZzYRQzAcqfpn0q5a2/uploads/1762265028354-favicon-32x32.png">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -87,6 +86,43 @@
                 <report-slider></report-slider>
             </div>
         </div>
+        <div class="wrapper">
+            <div class="trusted">
+                <h3>TRUSTED BY LEADING TEAMS</h3>
+                <div class="trusted-list">
+                    <div class="img-wrapper"><img src="images/bolt.png" alt="bolt logo"/></div>
+                    <div class="img-wrapper"><img src="images/dips.png" alt="bolt logo"/></div>
+                    <div class="img-wrapper"><img src="images/tietoevry.png" alt="bolt logo"/></div>
+                    <div class="img-wrapper"><img src="images/sipgate.svg" alt="bolt logo"/></div>
+                    <div class="img-wrapper"><img src="images/unimicro.png" alt="bolt logo"/></div>
+                    <div class="img-wrapper"><img src="images/telenor.png" alt="bolt logo"/></div>
+                </div>
+            </div>
+            <div id="slider">
+                <flow-slider></flow-slider>
+            </div>
+            <div class="comment">
+                <p class="text">
+                    "It is such a game changer to get all the transcripts and insights in seconds, and to be able 
+                    to cross check hypotheses based on many participants. Still by manually checking all the key 
+                    findings, we save loads of time by using Breyta. I love seeing Breyta doing the job, and doing 
+                    it so well!"
+                </p>
+                <p class="author">Cecilie Smestad</p>
+                <p class="caption">User Experience Consultant at Netlife</p>
+            </div>
+            <div class="report-info">
+                <h1>Custom output — tailored to you and your team</h1>
+                <p class="caption">
+                    Every report is personalized with your company context in mind. Each subscriber receives 
+                    role-specific insights and action items tailored to their responsibilities
+                </p>
+                <div class="info-list">
+                    <div class="info-block"></div>
+                    <div class="info-block"></div>
+                </div>
+            </div>
+        </div>
     </div>  
 
     
@@ -158,6 +194,18 @@
         </div>
     </div>
 </template>
+
+<template id="flow-slider">
+    <h1>How it works</h1>
+    <div class="steps">
+        <button class="prev"></button>
+        <div class="slide-content">
+            
+        </div>
+        <button class="next"></button>   
+    </div>
+</template>
+
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="js/vue.js"></script>
 <script src="js/script.js"></script>
