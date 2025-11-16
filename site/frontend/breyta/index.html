@@ -98,8 +98,11 @@
                     <div class="img-wrapper"><img src="images/telenor.png" alt="bolt logo"/></div>
                 </div>
             </div>
-            <div id="slider">
-                <flow-slider></flow-slider>
+            <div class="slider-wrapper">
+                <h1>How it works</h1>
+                <div id="sliderInfo">
+                    <flow-slider></flow-slider>
+                </div>
             </div>
             <div class="comment">
                 <p class="text">
@@ -196,13 +199,29 @@
 </template>
 
 <template id="flow-slider">
-    <h1>How it works</h1>
-    <div class="steps">
-        <button class="prev"></button>
-        <div class="slide-content">
-            
+    <div class="block-caption">
+        <div class="round-span">
+            <p>{{ currentSlide.slideId }}</p>
         </div>
-        <button class="next"></button>   
+        <h3>{{ currentSlide.title }}</h3>
+    </div>
+    <p class="caption">{{ currentSlide.caption }}</p>
+    <div class="steps">
+        <span class="round-span prev" @click="activeIndex = (activeIndex - 1 + tabs.length) % tabs.length">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-8 w-8 md:h-16 md:w-16 text-cta-button-foreground">
+                <path d="m12 19-7-7 7-7"></path>
+                <path d="M19 12H5"></path>
+            </svg>
+        </span>
+        <div class="slide-content">
+            <!---->
+        </div>
+        <span class="round-span next" @click="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-8 w-8 md:h-16 md:w-16 text-cta-button-foreground">
+                <path d="m12 19-7-7 7-7"></path>
+                <path d="M19 12H5"></path>
+            </svg>
+        </span>   
     </div>
 </template>
 

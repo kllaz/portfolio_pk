@@ -413,7 +413,6 @@ div.trusted div.trusted-list {
   display: grid;
   grid-template-columns: repeat(6, auto);
   gap: 1.5vw;
-  display: flex;
 }
 div.trusted div.trusted-list div {
   display: flex;
@@ -426,23 +425,81 @@ div.trusted div.trusted-list img {
   opacity: 0.6;
 }
 
+div.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.slider-wrapper h1 {
+  margin-bottom: 4vh;
+  font-size: 2vw;
+}
+
+div#sliderInfo {
+  margin-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div#sliderInfo p.caption {
+  font-size: 1vw;
+  color: hsl(var(--main-color)/0.9);
+  margin-bottom: 2vh;
+}
+div#sliderInfo h3 {
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+div.block-caption {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-bottom: 2vh;
+}
+div.block-caption div {
+  width: 2vw;
+  height: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.block-caption div p {
+  color: hsl(var(--button-color));
+}
+
 div.steps {
   display: flex;
   flex-direction: row;
+  gap: 1vw;
+  align-items: center;
 }
-div.steps button {
-  width: 5vw;
-  height: 5vw;
+div.steps span {
+  cursor: pointer;
+}
+div.steps div.slide-content {
+  width: 40rem;
+  height: 30rem;
+  background-color: white;
+  border-radius: 0.5vw;
+  box-shadow: 0 0.1vw 0.5vw rgba(0, 0, 0, 0.1);
+  border: 0.07rem solid hsl(var(--main-color)/0.15);
+}
+div.steps span.next svg {
+  transform: rotate(180deg);
+}
+
+.round-span {
+  width: 4vw;
+  height: 4vw;
   border-radius: 5vw;
   border: none;
   background-color: hsl(var(--main-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-div.steps button svg {
-  color: hsl(var(--button-color));
-}
-div.steps div.slide-content {
-  width: 48rem;
-  height: 28.125rem;
-  background-color: white;
-  border-radius: 0.5vw;
+.round-span svg {
+  stroke: hsl(var(--button-color));
 }/*# sourceMappingURL=styles.css.map */

@@ -13,7 +13,7 @@ const slider = Vue.createApp({
     }
 });
 
-slider.mount('#slider');
+slider.mount('#sliderInfo');
 
 //open analysis
 //const clickToOpen = document.getElementById('openAnalysis');

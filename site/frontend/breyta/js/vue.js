@@ -175,11 +175,50 @@ const FlowSlider = {
         return{
             activeIndex: 0,
             tabs: [
-
+                {
+                    id: 'slide-1',
+                    slideId: '1',
+                    title: 'Add context',
+                    caption: 'Tell the agent what matters — your questions, goals, or the outcome you are looking for.'
+                },
+                {
+                    id: 'slide-2',
+                    slideId: '2',
+                    title: 'Choose cadence',
+                    caption: 'Decide when you want it — daily, weekly, or monthly.'
+                },
+                {
+                    id: 'slide-3',
+                    slideId: '3',
+                    title: 'Select data sources',
+                    caption: 'Pick where the agent should look — OneDrive folders, BCC emails, CRM, tickets, docs, and more.'
+                },
+                {
+                    id: 'slide-4',
+                    slideId: '4',
+                    title: 'Add subscribers',
+                    caption: 'Choose who should receive the output — from teammates to execs.'
+                },
+                {
+                    id: 'slide-5',
+                    slideId: '5',
+                    title: 'Select format',
+                    caption: 'Decide how you want clarity delivered — report, brief, memo, or other outputs.'
+                },
+                {
+                    id: 'slide-6',
+                    slideId: '6',
+                    title: 'Get your report',
+                    caption: 'The agent analyzes your data sources and delivers actionable insights in your chosen format.'
+                }
             ],
         };
     },
-
+    methods: {
+        next() {
+            this.activeIndex = (this.activeIndex + 1) % this.tabs.length;
+        }
+    },
     computed: {
         currentSlide() {
             return this.tabs[this.activeIndex];
@@ -188,11 +227,32 @@ const FlowSlider = {
 }
 
 /*
+
+
+{
+    id: '',
+    title: '',
+    caption: ''
+},
+
 const ReportSlider = {
     name: 'ReportSlider',
     template: '#report-slider',
     data() {
         return{
+
+
+
+
+
+computed: {
+    currentSlide() {
+        return this.tabs[this.activeIndex];
+    }
+}
+
+
+
 
 
 
