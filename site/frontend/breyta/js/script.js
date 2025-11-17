@@ -12,6 +12,7 @@ const slider = Vue.createApp({
         FlowSlider
     }
 });
+slider.component('Typewriter', Typewriter);
 
 slider.mount('#sliderInfo');
 

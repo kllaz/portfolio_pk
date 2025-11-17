@@ -432,23 +432,23 @@ div.slider-wrapper {
 }
 div.slider-wrapper h1 {
   margin-bottom: 4vh;
-  font-size: 2vw;
+  font-size: 2.5rem;
 }
 
 div#sliderInfo {
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-div#sliderInfo p.caption {
-  font-size: 1vw;
+div#sliderInfo p.caption.title-caption {
+  font-size: 1.15rem;
   color: hsl(var(--main-color)/0.9);
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 }
-div#sliderInfo h3 {
-  font-size: 1.5vw;
+div#sliderInfo div.block-caption h3 {
+  font-size: 1.55rem;
   font-weight: 500;
 }
 
@@ -456,11 +456,11 @@ div.block-caption {
   display: flex;
   align-items: center;
   gap: 1vw;
-  margin-bottom: 2vh;
+  margin-bottom: 2.5vh;
 }
 div.block-caption div {
-  width: 2vw;
-  height: 2vw;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,9 +490,29 @@ div.steps span.next svg {
   transform: rotate(180deg);
 }
 
+div.content-wrapper {
+  padding: 3vh 2vw;
+}
+div.content-wrapper div.first-slide h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1vh;
+}
+div.content-wrapper div.first-slide div {
+  border: 0.1rem solid hsl(var(--main-color)/0.15);
+  border-radius: 0.25vw;
+  padding: 1.25vh 0.75vw;
+  margin-bottom: 3vh;
+}
+div.content-wrapper div.first-slide div p {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
 .round-span {
-  width: 4vw;
-  height: 4vw;
+  width: 5rem;
+  height: 5rem;
   border-radius: 5vw;
   border: none;
   background-color: hsl(var(--main-color));

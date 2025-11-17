@@ -168,11 +168,72 @@ const ReportSlider = {
     }
 };
 
+
+const Typewriter = {
+    name: 'Typewriter',
+    template: '#typewriter',
+    props: {
+        text: {type: String, required: true},
+        speed: {type: Number, default: 40},
+        start: {type: Boolean, default: false},
+    },
+    emits: ['done'],
+    data() {
+        return {
+            displayedText: '',
+            index: 0,
+            timerId: null
+        };
+    },
+    watch: {
+        start: {
+            immediate: true,
+            handler(newVal) {
+                if (newVal) this.startTyping();
+            }
+        },
+        text() {
+            if (this.start) this.startTyping();
+        }
+    },
+    methods: {
+        startTyping() {
+            if (this.timerId) clearInterval(this.timerId);
+            this.displayedText = '';
+            this.index = 0;
+            this.isTyping = true;
+
+            this.timerId = setInterval (() => {
+                if (this.index < this.text.length) {
+                    this.displayedText += this.text[this.index];
+                    this.index++;
+                } else {
+                    clearInterval(this.timerId);
+                    this.isTyping = false;
+                    this.timerId = null;
+                    this.$emit('done');
+                }
+            }, this.speed)
+        }
+    },
+    beforeUnmount() {
+        if (this.timerId) clearInterval(this.timerId);
+    }
+};
+
 const FlowSlider = {
     name: 'FlowSlider',
     template: '#flow-slider',
+    components: {Typewriter},
     data() {
         return{
+            step: 1,
+            blocks:[
+                'Analyze support tickets about playlist discovery combined with user interviews to identify pain points and feature requests',
+                'Improve playlist personalization to increase engagement and reduce churn in Q2. Deliver prioritized product features in a table with impact scores and implementation effort.',
+                'Our team owns playlist personalization. In Spain, Latin genres get 40% more skips than global average. Recent A/B test showed regional playlists increased session time by 18%. CEO wants stronger focus on Spanish market this quarter.'
+            ],
+
             activeIndex: 0,
             tabs: [
                 {
@@ -226,7 +287,27 @@ const FlowSlider = {
     }
 }
 
+
 /*
+
+const TypingAnimation = {
+    name: 'TypingAnimation',
+    template: '#typing-animation',
+    components: {Typewriter},
+    data () {
+        return {
+            step: 1,
+            blocks:[
+                'Analyze support tickets about playlist discovery combined with user interviews to identify pain points and feature requests',
+                'Improve playlist personalization to increase engagement and reduce churn in Q2. Deliver prioritized product features in a table with impact scores and implementation effort.',
+                'Our team owns playlist personalization. In Spain, Latin genres get 40% more skips than global average. Recent A/B test showed regional playlists increased session time by 18%. CEO wants stronger focus on Spanish market this quarter.'
+            ],
+        };
+    }
+};
+
+
+
 
 
 {

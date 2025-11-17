@@ -205,7 +205,7 @@
         </div>
         <h3>{{ currentSlide.title }}</h3>
     </div>
-    <p class="caption">{{ currentSlide.caption }}</p>
+    <p class="caption title-caption">{{ currentSlide.caption }}</p>
     <div class="steps">
         <span class="round-span prev" @click="activeIndex = (activeIndex - 1 + tabs.length) % tabs.length">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-8 w-8 md:h-16 md:w-16 text-cta-button-foreground">
@@ -214,7 +214,26 @@
             </svg>
         </span>
         <div class="slide-content">
-            <!---->
+            <div class="content-wrapper">
+                <div class="first-slide" v-if="activeIndex === 0">
+                    <h3>What should be analyzed?</h3>
+                    <div>
+                        <Typewriter :text="blocks[0]" :start="step >= 1" @done="step=2" />
+                    </div>
+                    <h3>What is the goal?</h3>
+                    <div>
+                        <Typewriter :text="blocks[1]" :start="step >= 2" @done="step=3" />
+                    </div>
+                    <h3>Additional context</h3>
+                    <div>
+                        <Typewriter :text="blocks[2]" :start="step >= 3"/>
+                    </div>
+                </div>
+
+                <div v-if="activeIndex === 1">
+                    <p>2</p>
+                </div>
+            </div>
         </div>
         <span class="round-span next" @click="next">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-8 w-8 md:h-16 md:w-16 text-cta-button-foreground">
@@ -223,6 +242,12 @@
             </svg>
         </span>   
     </div>
+</template>
+
+<template id="typewriter">
+    <p class="caption">
+        {{ displayedText }}<span v-if="isTyping">|</span>
+    </p>
 </template>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
