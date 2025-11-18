@@ -491,11 +491,57 @@ div.content-wrapper{
     span.checkbox-wrapper{
         margin-bottom: 2vh;
         display: flex;
+        flex-direction: row;
         .checkbox{
             background-color: hsl(var(--main-color));
         }
     }
+    div.form, div.input{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        div{
+            padding: .8rem 1rem;
+            border-radius: .5rem;
+            height: 2vh;
+            display: flex;
+            align-items: center;
+        }
+        span{
+            font-size: .925rem;
+            margin: 0;
+        }
+        div.text-form{
+            border: .1rem solid hsl(var(--main-color) /0.15);
+            margin-right: .75rem;
+        }
+    }
+    div.form{
+        width: 100%;
+        div.text-form span{opacity:.35}
+        div.email{width:14.5rem;}
+        div.role{width: 10rem;}
+        div.submit{
+            background-color: hsl(var(--main-color) / .2);
+            width: 4rem;
+            align-items: center;
+            justify-content: center;
+            span{opacity:1}
+        }
+    }
+    div.input{
+        svg{margin: 0 0 0 .5rem; width:24; height:24;}
+        div{width: max-content;}
+    }
 }
+
+//.text-form{
+//    display: flex;
+//    flex-direction: row;
+//    width: 97%;
+//    *{margin: 0; font-size: .85rem;}
+//}
+
 
 .round-span{
     width: 5rem;

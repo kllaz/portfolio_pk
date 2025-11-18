@@ -286,7 +286,7 @@
                         <li class="activate">
                             <div>
                                 <div class="checkbox">
-                                    <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                                    <svg  fill="none" stroke="white" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
@@ -304,7 +304,7 @@
                         <li class="activate">
                             <div>
                                 <div class="checkbox">
-                                    <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                                    <svg fill="none" stroke="white" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
@@ -315,7 +315,7 @@
                         <li class="activate">
                             <div>
                                 <div class="checkbox">
-                                    <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                                    <svg fill="none" stroke="white" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
@@ -330,7 +330,7 @@
                     <h3>Delivery</h3>
                     <span class="checkbox-wrapper">
                         <div class="checkbox">
-                            <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                            <svg  fill="none" stroke="white" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                             </svg>
                         </div>
@@ -340,16 +340,30 @@
                     <h4>Additional recipients</h4>
                     <p class="caption">Add team members who should receive this report. You can specify their role for context.</p>
                     <div class="form">
-                        <div class="email">
-
+                        <div class="text-form email">
+                            <span class="caption">Enter email address</span>
                         </div>
-                        <div class="role"></div>
-                        <div class="submit"></div>
+                        <div class="text-form role">
+                            <span class="caption">Role (optional)</span>
+                        </div>
+                        <div class="submit">
+                            <span class="caption">Add</span>
+                        </div>
                     </div>
                     <h4>Additional receipients:</h4>
                     <div class="input">
-                        <div class="email entered"></div>
-                        <div class="email entered"></div>
+                        <div class="text-form">
+                            <span class="caption">product-team@spotify.com</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div class="text-form margin-right-0">
+                            <span class="caption">spanish-market-lead@spotify.com</span>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
                     </div>
                     <p class="caption">These email addresses will also receive the report when it's generated.</p>
                 </div>

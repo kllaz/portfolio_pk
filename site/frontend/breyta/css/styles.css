@@ -615,9 +615,60 @@ div.content-wrapper .margin-1vh {
 div.content-wrapper span.checkbox-wrapper {
   margin-bottom: 2vh;
   display: flex;
+  flex-direction: row;
 }
 div.content-wrapper span.checkbox-wrapper .checkbox {
   background-color: hsl(var(--main-color));
+}
+div.content-wrapper div.form, div.content-wrapper div.input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+div.content-wrapper div.form div, div.content-wrapper div.input div {
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  height: 2vh;
+  display: flex;
+  align-items: center;
+}
+div.content-wrapper div.form span, div.content-wrapper div.input span {
+  font-size: 0.925rem;
+  margin: 0;
+}
+div.content-wrapper div.form div.text-form, div.content-wrapper div.input div.text-form {
+  border: 0.1rem solid hsl(var(--main-color)/0.15);
+  margin-right: 0.75rem;
+}
+div.content-wrapper div.form {
+  width: 100%;
+}
+div.content-wrapper div.form div.text-form span {
+  opacity: 0.35;
+}
+div.content-wrapper div.form div.email {
+  width: 14.5rem;
+}
+div.content-wrapper div.form div.role {
+  width: 10rem;
+}
+div.content-wrapper div.form div.submit {
+  background-color: hsl(var(--main-color)/0.2);
+  width: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+div.content-wrapper div.form div.submit span {
+  opacity: 1;
+}
+div.content-wrapper div.input svg {
+  margin: 0 0 0 0.5rem;
+  width: 24;
+  height: 24;
+}
+div.content-wrapper div.input div {
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .round-span {
