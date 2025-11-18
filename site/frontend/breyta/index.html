@@ -114,18 +114,8 @@
                 <p class="author">Cecilie Smestad</p>
                 <p class="caption">User Experience Consultant at Netlife</p>
             </div>
-            <div class="report-info">
-                <h1>Custom output — tailored to you and your team</h1>
-                <p class="caption">
-                    Every report is personalized with your company context in mind. Each subscriber receives 
-                    role-specific insights and action items tailored to their responsibilities
-                </p>
-                <div class="info-list">
-                    <div class="info-block"></div>
-                    <div class="info-block"></div>
-                </div>
-            </div>
         </div>
+        <footer></footer>
     </div>  
 
     
@@ -215,7 +205,7 @@
         </span>
         <div class="slide-content">
             <div class="content-wrapper">
-                <div class="first-slide" v-if="activeIndex === 0">
+                <div class="slide-1" v-if="activeIndex === 0">
                     <h4>What should be analyzed?</h4>
                     <div class="first-typewriter">
                         <Typewriter :text="blocks[0]" :start="step >= 1" @done="step=2" />
@@ -230,7 +220,7 @@
                     </div>
                 </div>
 
-                <div v-if="activeIndex === 1">
+                <div class="slide-2" v-if="activeIndex === 1">
                     <h3>Schedule</h3>
                     <p class="caption">How often shall a report be generated</p>
                     <p class="link appear appear-first">
@@ -272,7 +262,7 @@
                     </p>
                 </div>
 
-                <div v-if="activeIndex === 2">
+                <div class="slide-3" v-if="activeIndex === 2">
                     <h3>Data filter</h3>
                     <p class="caption margin-1vh">Analyse data from within the...</p>
                     <span class="link">
@@ -368,7 +358,7 @@
                     <p class="caption">These email addresses will also receive the report when it's generated.</p>
                 </div>
 
-                <div v-if="activeIndex === 4">
+                <div class="slide-5" v-if="activeIndex === 4">
                     <div class="scroll-box">
                         <h3>How do you want the format output to be?</h3>
                         <p class="caption">Provide instructions for how the executive summary should be structured. These instructions are saved with the subscription.</p>
@@ -396,8 +386,64 @@
                     </div>
                 </div>
 
-                <div v-if="activeIndex === 5" class="scroll-box">
-                    <p>6</p>
+                <div class="slide-6 scroll-box" v-if="activeIndex === 5">
+                    <div class="content-wrapper">
+                        <h3>Playlist Discovery Analysis</h3>
+                        <p class="caption margin-bottom-2rem">Weekly report • Generated on Tuesday, 10:00 UTC</p>
+                        <div class="main-topic">
+                            <h4>Main Topics Identified</h4>
+                            <div class="info-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Topic</th>
+                                            <th>Volume</th>
+                                            <th>Finding Count</th>
+                                            <th>Impact</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Regional Content Gaps</td>
+                                            <td>42%</td>
+                                            <td>127 findings</td>
+                                            <td><span class="high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Discovery Algorithm Issues</td>
+                                            <td>31%</td>
+                                            <td>94 findings</td>
+                                            <td><span class="high">High</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Playlist Personalization Requests</td>
+                                            <td>27%</td>
+                                            <td>82 findings</td>
+                                            <td><span class="medium">Medium</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="ins-n-rec">
+                            <h4>Insights & Recommendations</h4>
+                            <p class="sub-header">Support Implications:</p>
+                            <ul>
+                                <li><p class="caption">Spanish market skip rates 40% higher than global average for Latin genres</p></li>
+                                <li><p class="caption">94 support tickets cite poor playlist recommendations in regional contexts</p></li>
+                                <li><p class="caption">User interviews reveal frustration with generic international playlists</p></li>
+                            </ul>
+                            <p class="sub-header">Support Implications:</p>
+                            <ul>
+                                <li><p class="caption">Regional playlist algorithm needs immediate enhancement</p></li>
+                                <li><p class="caption">A/B test showed 18% increase in session time with regional playlists</p></li>
+                                <li><p class="caption">Opportunity to reduce churn in Spanish market through better localization</p></li>
+                            </ul>
+                            <p class="sub-header">Trend Direction</p>
+                            <p class="caption">Regional content gap complaints increased 23% week-over-week, indicating growing user awareness and expectations for localized content</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

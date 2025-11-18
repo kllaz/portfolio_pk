@@ -516,13 +516,13 @@ div.content-wrapper p.caption {
   font-size: 0.85rem;
   font-weight: 400;
 }
-div.content-wrapper div.first-slide div {
+div.content-wrapper div.slide-1 div {
   border: 0.1rem solid hsl(var(--main-color)/0.15);
   border-radius: 0.25vw;
   padding: 1.25vh 0.75vw;
   margin-bottom: 3vh;
 }
-div.content-wrapper div.first-slide div p.caption {
+div.content-wrapper div.slide-1 div p.caption {
   font-size: 0.75rem;
   font-weight: 300;
 }
@@ -605,6 +605,86 @@ div.content-wrapper ul.checkbox-list li.activate:nth-of-type(4) {
 div.content-wrapper ul.checkbox-list li.activate:nth-of-type(4) div.checkbox {
   animation-delay: 1.6s;
 }
+div.content-wrapper div.slide-5 div.scroll-box {
+  max-height: 20rem;
+}
+div.content-wrapper div.slide-5 div.scroll-box div.code-box {
+  border: 0.1rem solid hsl(var(--main-color)/0.15);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+div.content-wrapper div.slide-5 div.scroll-box div.code-box p {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  white-space: pre-wrap;
+  margin: 0 0 1rem 0;
+}
+div.content-wrapper div.slide-5 div.scroll-box div.code-box p:not(.comment) {
+  opacity: 0.6;
+}
+div.content-wrapper div.slide-6 {
+  width: 39.5rem;
+  height: 30rem;
+  margin: -3vh -2vh;
+}
+div.content-wrapper div.slide-6 h4 {
+  font-size: 1.15rem;
+  letter-spacing: normal;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+div.content-wrapper div.slide-6 p.sub-header {
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+}
+div.content-wrapper div.slide-6 p.caption {
+  margin: 0;
+  font-size: 0.85rem !important;
+}
+div.content-wrapper div.slide-6 ul {
+  margin-bottom: 1.5rem;
+  list-style: disc !important;
+  padding-left: 1rem !important;
+}
+div.content-wrapper div.slide-6 ul li {
+  display: list-item !important;
+  border: none !important;
+  padding: 0 !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  text-align: justify !important;
+  margin-bottom: 0;
+}
+div.content-wrapper div.slide-6 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+div.content-wrapper div.slide-6 th, div.content-wrapper div.slide-6 td {
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.2rem;
+}
+div.content-wrapper div.slide-6 td {
+  opacity: 0.7;
+}
+div.content-wrapper div.slide-6 td span {
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.2rem;
+}
+div.content-wrapper div.slide-6 span.high {
+  color: rgb(134, 0, 0);
+  background-color: rgba(255, 31, 31, 0.192);
+}
+div.content-wrapper div.slide-6 span.medium {
+  color: rgb(36, 36, 36);
+  background-color: rgba(43, 43, 43, 0.192);
+}
+div.content-wrapper div.slide-6 th {
+  text-align: left;
+}
+div.content-wrapper div.slide-6 tr {
+  border-bottom: 0.1rem solid hsl(var(--main-color)/0.15);
+  margin-bottom: 0;
+}
 div.content-wrapper .margin-1vh {
   margin-bottom: 1vh;
 }
@@ -667,33 +747,6 @@ div.content-wrapper div.input div {
   width: max-content;
 }
 
-div.scroll-box {
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-div.scroll-box h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-div.scroll-box p.caption {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-div.scroll-box div.code-box {
-  border: 0.1rem solid hsl(var(--main-color)/0.15);
-  padding: 1rem;
-  border-radius: 1rem;
-}
-div.scroll-box div.code-box p {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  white-space: pre-wrap;
-  margin: 0 0 1rem 0;
-}
-div.scroll-box div.code-box p:not(.comment) {
-  opacity: 0.6;
-}
-
 div.preview {
   display: flex;
   flex-direction: row;
@@ -717,6 +770,19 @@ div.preview div.preview-button:hover {
 }
 div.preview div, div.preview h3 {
   margin-bottom: 0;
+}
+
+.scroll-box {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scroll-box h3 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+}
+.scroll-box p.caption {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
 }
 
 .round-span {
@@ -774,6 +840,10 @@ div.preview div, div.preview h3 {
 div.hr {
   height: 0.05vw;
   background-color: hsl(var(--main-color)/0.1);
+}
+
+.margin-bottom-2rem {
+  margin-bottom: 2rem !important;
 }
 
 @keyframes changeBg {
