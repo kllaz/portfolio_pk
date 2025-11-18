@@ -369,9 +369,31 @@
                 </div>
 
                 <div v-if="activeIndex === 4">
-                    <div class="scroll-box"></div>
-                    <div class="hr"></div>
-                    <h3>Preview memo</h3>
+                    <div class="scroll-box">
+                        <h3>How do you want the format output to be?</h3>
+                        <p class="caption">Provide instructions for how the executive summary should be structured. These instructions are saved with the subscription.</p>
+                        <div class="code-box">
+                            <p class="comment">## **Main Topics Identified**</p>
+                            <p>| **Topic** | **Volume (% of findings)** | **Finding Count** | **Impact** |</p>
+                            <p>|-----------|---------------------------|-------------------|------------|</p>
+                            <p>| [Topic Name] | X% | Y findings | Low / Medium / High |</p> 
+                            <p>---</p>
+                            <p class="comment">## **Insights & Recommendations**</p>
+                            <p>- Support implications</p>
+                            <p>- Product implications</p>
+                            <p>- Trend direction (if applicable)</p>
+                            <p>---</p>
+                            <p class="comment">## **Next Steps**</p>
+                            <p>[List the key follow-up actions clearly]</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="hr"></div>
+                        <div class="preview">
+                            <h3>Preview memo</h3>
+                            <div class="preview-button">Generate preview</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div v-if="activeIndex === 5" class="scroll-box">
