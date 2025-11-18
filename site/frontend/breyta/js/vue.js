@@ -182,7 +182,8 @@ const Typewriter = {
         return {
             displayedText: '',
             index: 0,
-            timerId: null
+            timerId: null,
+            isTyping: false
         };
     },
     watch: {

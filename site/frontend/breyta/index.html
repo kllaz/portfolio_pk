@@ -216,37 +216,151 @@
         <div class="slide-content">
             <div class="content-wrapper">
                 <div class="first-slide" v-if="activeIndex === 0">
-                    <h3>What should be analyzed?</h3>
-                    <div>
+                    <h4>What should be analyzed?</h4>
+                    <div class="first-typewriter">
                         <Typewriter :text="blocks[0]" :start="step >= 1" @done="step=2" />
                     </div>
-                    <h3>What is the goal?</h3>
-                    <div>
+                    <h4>What is the goal?</h4>
+                    <div class="second-typewriter">
                         <Typewriter :text="blocks[1]" :start="step >= 2" @done="step=3" />
                     </div>
-                    <h3>Additional context</h3>
-                    <div>
+                    <h4>Additional context</h4>
+                    <div class="third-typewriter">
                         <Typewriter :text="blocks[2]" :start="step >= 3"/>
                     </div>
                 </div>
 
                 <div v-if="activeIndex === 1">
-                    <p>2</p>
+                    <h3>Schedule</h3>
+                    <p class="caption">How often shall a report be generated</p>
+                    <p class="link appear appear-first">
+                        Weekly
+                        <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </p>
+                    <p class="caption">At which day of the week?</p>
+                    <ul class="week-list">
+                        <li>
+                            <div>Mon</div>
+                        </li>
+                        <li class="active">
+                            <div class="active">Tue</div>
+                        </li>
+                        <li>
+                            <div>Wed</div>
+                        </li>
+                        <li>
+                            <div>Thu</div>
+                        </li>
+                        <li>
+                            <div>Fri</div>
+                        </li>
+                        <li>
+                            <div>Sat</div>
+                        </li>
+                        <li>
+                            <div>Sun</div>
+                        </li>
+                    </ul>
+                    <p class="caption">At what time of day? (UTC)</p>
+                    <p class="link appear appear-second">
+                        10:00
+                        <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </p>
                 </div>
 
                 <div v-if="activeIndex === 2">
-                    <p>3</p>
+                    <h3>Data filter</h3>
+                    <p class="caption margin-1vh">Analyse data from within the...</p>
+                    <span class="link">
+                        Last 7 days
+                        <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </span>
+                    <p class="caption">Analyse data from these sources...</p>
+                    <ul class="checkbox-list">
+                        <li class="activate">
+                            <div>
+                                <div class="checkbox">
+                                    <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p>Support tickets</p>
+                                <span class="caption">Jira</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="checkbox"></div>
+                                <p>User interviews</p>
+                                <span class="caption">Google Drive</span>
+                            </div>
+                        </li>
+                        <li class="activate">
+                            <div>
+                                <div class="checkbox">
+                                    <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p>Product usage data</p>
+                                <span class="caption">Analytics</span>
+                            </div>
+                        </li>
+                        <li class="activate">
+                            <div>
+                                <div class="checkbox">
+                                    <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <p>Support</p>
+                                <span class="caption">Email Forwards</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <div v-if="activeIndex === 3">
-                    <p>4</p>
+                    <h3>Delivery</h3>
+                    <span class="checkbox-wrapper">
+                        <div class="checkbox">
+                            <svg class="w-3 h-3 text-primary-foreground" fill="none" stroke="white" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        Send report to email
+                    </span>
+                    <p class="caption">Send reports to pm-lead@spotify.com</p>
+                    <h4>Additional recipients</h4>
+                    <p class="caption">Add team members who should receive this report. You can specify their role for context.</p>
+                    <div class="form">
+                        <div class="email">
+
+                        </div>
+                        <div class="role"></div>
+                        <div class="submit"></div>
+                    </div>
+                    <h4>Additional receipients:</h4>
+                    <div class="input">
+                        <div class="email entered"></div>
+                        <div class="email entered"></div>
+                    </div>
+                    <p class="caption">These email addresses will also receive the report when it's generated.</p>
                 </div>
 
                 <div v-if="activeIndex === 4">
-                    <p>5</p>
+                    <div class="scroll-box"></div>
+                    <div class="hr"></div>
+                    <h3>Preview memo</h3>
                 </div>
 
-                <div v-if="activeIndex === 5">
+                <div v-if="activeIndex === 5" class="scroll-box">
                     <p>6</p>
                 </div>
             </div>

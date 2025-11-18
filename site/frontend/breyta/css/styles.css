@@ -1,6 +1,5 @@
 :root {
   --background: 0 0% 100%;
-  --foreground: 315 24% 15%;
   --color1: 25 93% 70%;
   --color2: 51 90% 70%;
   --color3: 35 90% 70%;
@@ -12,7 +11,7 @@
       hsl(var(--color3))
   );
   --main-color: 289 25% 15%;
-  --main-hover: 289 25% 16%;
+  --color-for-dark-bg: 289 25% 90%;
   font-size: 16px;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
 }
@@ -258,7 +257,7 @@ div.buttons button.try p {
   font-weight: 400;
 }
 div.buttons button.try:hover {
-  background-color: hsl(var(--main-hover)/0.9);
+  background-color: hsl(var(--main-color)/0.9);
 }
 div.buttons button.chat {
   background: none;
@@ -475,7 +474,7 @@ div.steps {
   gap: 1vw;
   align-items: center;
 }
-div.steps span {
+div.steps span:where(.prev, .next) {
   cursor: pointer;
 }
 div.steps div.slide-content {
@@ -485,19 +484,41 @@ div.steps div.slide-content {
   border-radius: 0.5vw;
   box-shadow: 0 0.1vw 0.5vw rgba(0, 0, 0, 0.1);
   border: 0.07rem solid hsl(var(--main-color)/0.15);
+  display: grid;
+  align-items: center;
 }
 div.steps span.next svg {
   transform: rotate(180deg);
 }
 
+div.first-typewriter {
+  height: 2.5rem;
+}
+
+div.second-typewriter, .third-typewriter {
+  height: 5rem;
+}
+
 div.content-wrapper {
   padding: 3vh 2vw;
 }
-div.content-wrapper div.first-slide h3 {
+div.content-wrapper * {
+  margin-bottom: 2vh;
+}
+div.content-wrapper h4 {
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.05rem;
   margin-bottom: 1vh;
+}
+div.content-wrapper h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1vh;
+}
+div.content-wrapper p.caption {
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 div.content-wrapper div.first-slide div {
   border: 0.1rem solid hsl(var(--main-color)/0.15);
@@ -505,9 +526,98 @@ div.content-wrapper div.first-slide div {
   padding: 1.25vh 0.75vw;
   margin-bottom: 3vh;
 }
-div.content-wrapper div.first-slide div p {
+div.content-wrapper div.first-slide div p.caption {
   font-size: 0.75rem;
   font-weight: 300;
+}
+div.content-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+div.content-wrapper ul li {
+  display: inline-block;
+  padding: 1rem 0.7rem;
+  width: 2rem;
+  border: 0.1rem solid hsl(var(--main-color)/0.15);
+  border-radius: 2rem;
+  margin-right: 1rem;
+  text-align: center;
+}
+div.content-wrapper ul li div {
+  color: hsl(var(--main-color)/0.6);
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.content-wrapper ul .active {
+  animation: changeBg 0.5s 1s ease-in forwards;
+}
+div.content-wrapper ul.checkbox-list {
+  display: flex;
+  flex-direction: column;
+}
+div.content-wrapper ul.checkbox-list li {
+  opacity: 0.5;
+  padding: 0.7rem 0.7rem;
+  display: flex;
+  width: 97%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1vh;
+}
+div.content-wrapper ul.checkbox-list li * {
+  margin: 0;
+  font-size: 0.85rem;
+}
+div.content-wrapper ul.checkbox-list li div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+div.content-wrapper ul.checkbox-list li span.caption {
+  background-color: hsl(var(--main-color)/0.2);
+  padding: 0.3vh 0.7vw;
+  border-radius: 1vw;
+  margin-left: auto;
+  display: block;
+}
+div.content-wrapper ul.checkbox-list li > div {
+  width: inherit;
+}
+div.content-wrapper ul.checkbox-list li.activate {
+  animation: activate 0.5s ease-in forwards;
+}
+div.content-wrapper ul.checkbox-list li.activate div.checkbox {
+  animation: activateCheckbox 0.5s ease-in forwards;
+}
+div.content-wrapper ul.checkbox-list li.activate:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+div.content-wrapper ul.checkbox-list li.activate:nth-of-type(1) div.checkbox {
+  animation-delay: 0.2s;
+}
+div.content-wrapper ul.checkbox-list li.activate:nth-of-type(3) {
+  animation-delay: 0.9s;
+}
+div.content-wrapper ul.checkbox-list li.activate:nth-of-type(3) div.checkbox {
+  animation-delay: 0.9s;
+}
+div.content-wrapper ul.checkbox-list li.activate:nth-of-type(4) {
+  animation-delay: 1.6s;
+}
+div.content-wrapper ul.checkbox-list li.activate:nth-of-type(4) div.checkbox {
+  animation-delay: 1.6s;
+}
+div.content-wrapper .margin-1vh {
+  margin-bottom: 1vh;
+}
+div.content-wrapper span.checkbox-wrapper {
+  margin-bottom: 2vh;
+  display: flex;
+}
+div.content-wrapper span.checkbox-wrapper .checkbox {
+  background-color: hsl(var(--main-color));
 }
 
 .round-span {
@@ -522,4 +632,77 @@ div.content-wrapper div.first-slide div p {
 }
 .round-span svg {
   stroke: hsl(var(--button-color));
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8rem 1.8rem;
+  border: 0.1rem solid hsl(var(--main-color)/0.2);
+  border-radius: 3rem;
+}
+.link svg {
+  margin: 0;
+}
+
+.appear {
+  animation: appear 0.5s ease-in forwards;
+  opacity: 0;
+}
+
+.appear-first {
+  animation-delay: 0.3s;
+}
+
+.appear-second {
+  animation-delay: 1.7s;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem !important;
+  border-radius: 0.2rem;
+  margin-bottom: 0 !important;
+  border: 0.15rem solid hsl(var(--main-color)/0.2);
+}
+
+@keyframes changeBg {
+  from {
+    background-color: white;
+    color: hsl(var(--main-color)/0.6);
+  }
+  to {
+    background-color: hsl(var(--main-color));
+    color: hsl(var(--color-for-dark-bg));
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes activate {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes activateCheckbox {
+  from {
+    background-color: none;
+  }
+  to {
+    background-color: hsl(var(--main-color));
+  }
 }/*# sourceMappingURL=styles.css.map */

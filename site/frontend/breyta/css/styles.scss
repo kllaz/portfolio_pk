@@ -1,6 +1,5 @@
 :root{
     --background: 0 0% 100%;
-    --foreground: 315 24% 15%;
     --color1: 25 93% 70%; //orange
     --color2: 51 90% 70%; //yellow
     --color3: 35 90% 70%; //brighter orange
@@ -12,7 +11,7 @@
         hsl(var(--color3))
     );
     --main-color: 289 25% 15%;
-    --main-hover: 289 25% 16%;
+    --color-for-dark-bg: 289 25% 90%;
     font-size: 16px;
     font-family: Inter, ui-sans-serif, system-ui, sans-serif;
 }
@@ -204,7 +203,7 @@ div.buttons{
         background-color: hsl(var(--main-color));
     }
     button.try:hover{
-        background-color: hsl(var(--main-hover) / .9);
+        background-color: hsl(var(--main-color) / .9);
     }
     button.chat{
         p{font-size: 1.125rem; font-weight: 400};
@@ -378,7 +377,7 @@ div.steps{
     flex-direction: row;
     gap: 1vw;
     align-items: center;
-    span{cursor: pointer;}
+    span:where(.prev, .next){cursor: pointer;}
     div.slide-content{
         width: 40rem;
         height: 30rem;
@@ -386,19 +385,114 @@ div.steps{
         border-radius: .5vw;
         box-shadow: 0 .1vw .5vw rgba(0,0,0,0.1);    
         border: .07rem solid hsl(var(--main-color) /0.15);
+        display: grid;
+        align-items: center;
     }
     span.next svg{transform: rotate(180deg);}
 }
+div.first-typewriter{
+    height: 2.5rem;
+}
+div.second-typewriter, .third-typewriter{
+    height: 5rem;
+}
 div.content-wrapper{
+    *{margin-bottom: 2vh;}
     padding: 3vh 2vw;
+    h4{font-size: .85rem; font-weight: 500; letter-spacing: .05rem; margin-bottom: 1vh;}
+    h3{font-size: 1.25rem; font-weight: 500; margin-bottom: 1vh;}
+    p.caption{font-size: .85rem; font-weight: 400;}
     div.first-slide{
-        h3{font-size: .85rem; font-weight: 500; letter-spacing: .05rem; margin-bottom: 1vh;}
         div{
             border: .1rem solid hsl(var(--main-color) /0.15);
             border-radius: .25vw;
             padding: 1.25vh .75vw;
             margin-bottom: 3vh;
-            p{font-size: .75rem; font-weight: 300;}
+            p.caption{font-size: .75rem; font-weight: 300;}
+        }
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+            display: inline-block; 
+            padding: 1rem .7rem;
+            width: 2rem;
+            border: .1rem solid hsl(var(--main-color) /0.15);
+            border-radius: 2rem;
+            margin-right: 1rem;
+            text-align: center;
+            div{
+                color: hsl(var(--main-color) / 0.6);
+                margin-bottom: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .active{
+            animation: changeBg .5s 1s ease-in forwards;
+        }
+    }
+    ul.checkbox-list{
+        display: flex;
+        flex-direction: column;
+        li{
+            opacity: .5;
+            padding: .7rem .7rem;
+            display: flex;
+            width: 97%;
+            height: 2rem;
+            border-radius: .5rem;
+            margin-bottom: 1vh;
+            *{margin: 0; font-size: .85rem;}
+            div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            span.caption{
+                background-color: hsl(var(--main-color) / 0.2);
+                padding:.3vh .7vw;
+                border-radius: 1vw;
+                margin-left: auto;
+                display: block;
+            }
+        }
+        li > div{width: inherit;}
+        li.activate{
+            animation: activate .5s ease-in forwards;
+            div.checkbox{
+                animation: activateCheckbox .5s ease-in forwards;
+            }
+        }
+        li.activate:nth-of-type(1){
+            animation-delay: .2s;
+            div.checkbox{
+                animation-delay: .2s;
+            }
+        }
+        li.activate:nth-of-type(3){
+            animation-delay: .9s;
+            div.checkbox{
+                animation-delay: .9s;
+            }
+        }
+        li.activate:nth-of-type(4){
+            animation-delay: 1.6s;
+            div.checkbox{
+                animation-delay: 1.6s;
+            }
+        }
+    }
+    .margin-1vh{
+        margin-bottom: 1vh;
+    }
+    span.checkbox-wrapper{
+        margin-bottom: 2vh;
+        display: flex;
+        .checkbox{
+            background-color: hsl(var(--main-color));
         }
     }
 }
@@ -415,4 +509,56 @@ div.content-wrapper{
     svg{
         stroke: hsl(var(--button-color));
     }
+}
+.link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: fit-content;
+    padding: .8rem 1.8rem;
+    border: .1rem solid hsl(var(--main-color) / .2);
+    border-radius: 3rem;
+    svg{margin:0}
+}
+.appear{
+    animation: appear .5s ease-in forwards;
+    opacity:0;
+}
+.appear-first{animation-delay: .3s;}
+.appear-second{animation-delay: 1.7s;}
+.checkbox{
+    width: 1rem;
+    height: 1rem;
+    margin-right: .5rem !important;
+    border-radius: .2rem;
+    margin-bottom: 0 !important;
+    border: .15rem solid hsl(var(--main-color) / .2);
+}
+
+@keyframes changeBg {
+    from{
+        background-color: white;
+        color: hsl(var(--main-color) / 0.6);
+    }
+    to{
+        background-color: hsl(var(--main-color));
+        color: hsl(var(--color-for-dark-bg));
+    }
+}
+
+@keyframes appear {
+    from{opacity:0;}
+    to{opacity: 1;}
+}
+
+@keyframes activate {
+    from{opacity:0.5;}
+    to{opacity: 1;}
+}
+
+@keyframes activateCheckbox {
+    from{background-color: none;}
+    to{background-color: hsl(var(--main-color));}
 }
