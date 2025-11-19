@@ -5,7 +5,7 @@ function FrontendSlider() {
                 "\n\nДля написания страницы использованы препроцессор SCSS, модуль flex, медиа-запрос @media и css-правила @font-face, @keyframes, JS-библиотека JQuery: \n• SCSS: удобнее классического CSS;\n• Flex, @media: Адаптивный дизайн, мобильная версия;\n• @font-face: подключение шрифтов (Montserrat, Playfair_Display);\n• @keyframes: создание анимации пульсирующего текста\n• JQuery: реализация бургер-меню в мобильной версии."], },
         {id:2, image: "../images/slide_2.png", title:"Breyta", link:"../frontend/breyta/index.html", 
             desc: [<i>Лендинг.</i>,
-                "\n\nДля написания страницы использованы препроцессор SCSS, переменные, модули flex, grid, медиа-запрос @media и css-правила @font-face, @keyframes, JS-фреймворк Vue: \n• Переменные: для динамичного дизайна;\n• Flex, grid @keyframes: анимация\n• @font-face: подключение шрифтов (Tartuffo, Inter)\n• Vue: отображение отчёта в соответствии с выбранной темой"],},
+                "\n\nДля написания страницы использованы препроцессор SCSS, переменные, модули flex, grid, медиа-запрос @media и css-правила @font-face, @keyframes, JS-фреймворк Vue: \n• Переменные: для динамичного дизайна;\n• Flex, grid @keyframes: анимация\n• @font-face: подключение шрифтов (Tartuffo, Inter)\n• Vue: отображение отчёта в соответствии с выбранной темой; слайдер"],},
         {id:3, image: "../images/slide_1.png", title:"Example 3", desc: "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text "},
     ];
     const [index, setIndex] = React.useState(0);
@@ -298,4 +298,3 @@ function MainContent(){
 }
 
 ReactDOM.createRoot(document.getElementById('main-content')).render(<MainContent />);
-            

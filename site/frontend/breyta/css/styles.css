@@ -424,6 +424,7 @@ div.slider-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20vh;
 }
 div.slider-wrapper h1 {
   margin-bottom: 4vh;
@@ -654,10 +655,6 @@ div.content-wrapper div.slide-6 ul li {
   text-align: justify !important;
   margin-bottom: 0;
 }
-div.content-wrapper div.slide-6 table {
-  border-collapse: collapse;
-  width: 100%;
-}
 div.content-wrapper div.slide-6 th, div.content-wrapper div.slide-6 td {
   font-weight: 400;
   font-size: 0.9rem;
@@ -770,6 +767,76 @@ div.preview div.preview-button:hover {
 }
 div.preview div, div.preview h3 {
   margin-bottom: 0;
+}
+
+div.comment {
+  display: block;
+  position: relative;
+  max-width: 50rem;
+  border-radius: 1rem;
+  border: 0.1rem solid hsl(var(--main-color)/0.15);
+  box-shadow: 0 0.1vw 0.5vw rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 3rem 6rem;
+  margin-bottom: 20vh;
+}
+div.comment svg {
+  opacity: 0.5;
+  position: absolute;
+  left: -2rem;
+  top: -2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+div.comment p.text {
+  font-size: 1.375rem;
+  margin-bottom: 2rem;
+}
+div.comment p.author {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+div.comment p.caption {
+  font-size: 1.2rem;
+}
+
+div.footer-content {
+  max-width: 80rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+div.footer-content table {
+  margin: 2rem 0;
+}
+div.footer-content th, div.footer-content td {
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.2rem;
+}
+div.footer-content td {
+  opacity: 0.7;
+}
+div.footer-content th {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+}
+div.footer-content tr {
+  margin-bottom: 0;
+}
+div.footer-content p.copyright {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .scroll-box {
