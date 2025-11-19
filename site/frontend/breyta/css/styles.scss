@@ -23,7 +23,7 @@
 body {
     background-color: hsl(var(--background));
     transition: opacity ease-in 0.2s;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -169,9 +169,9 @@ div.welcome-window{
     }
     div.insights{
         margin-top: 5vh;
-        display: grid;
-        //grid-auto-flow: column;
-        grid-template-columns: repeat(4, auto);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2vw;
         div{display: flex; align-items: center; gap: 0.5rem;}
     }
@@ -184,6 +184,8 @@ div.welcome-window{
 div.buttons{
     margin-top: 5vh;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1vw;
     button{
         border-radius: 3vw;
@@ -274,15 +276,20 @@ div.report-list{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+        flex-wrap: wrap;
     gap: .4vw;
     div.tab{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 3rem;
         border-radius: .3vw;
+        min-width: 12rem;
         background-color: rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: all ease-in-out .3s;
         padding: .5vw 3vw .5vw 1vw;
         text-align:left;
-        line-height: 1.2vw;
         h1,p{font-family: Inter, ui-sans-serif, system-ui, sans-serif;}
         h1{font-size: 1rem;}
         p{font-size: .825rem; font-weight: normal;}
@@ -724,6 +731,20 @@ div.hr{
     background-color: hsl(var(--main-color) / 0.1);
 }
 .margin-bottom-2rem{margin-bottom: 2rem !important;}
+
+@media (max-width: 770px) {
+    div.report-wrapper div.centered {display: none;}
+    div.buttons{flex-direction: column; button{height: 4rem; border-radius: 2rem;}}
+    div#app, div#app div.reports{width: 100%;}
+    div.full-analysis{display: block;}
+    div.content{width: 100%;}
+    div.trusted{width: 80%; margin-left: auto; margin-right: auto; justify-content: center;}
+    div.trusted-list{grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr)) !important;}
+    div.comment{max-width: 30rem !important; }
+    div.comment svg {left: 5rem; top: -2rem}
+    div.slider-wrapper{max-width:80rem}
+    div#sliderInfo, div#sliderInfo div.steps {max-width: 80rem !important;}
+}
 
 @keyframes changeBg {
     from{

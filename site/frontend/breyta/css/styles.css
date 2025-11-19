@@ -25,7 +25,7 @@
 body {
   background-color: hsl(var(--background));
   transition: opacity ease-in 0.2s;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -212,8 +212,9 @@ div.welcome-window div.greeting {
 }
 div.welcome-window div.insights {
   margin-top: 5vh;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2vw;
 }
 div.welcome-window div.insights div {
@@ -229,6 +230,8 @@ div.welcome-window .caption {
 div.buttons {
   margin-top: 5vh;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1vw;
 }
 div.buttons button {
@@ -346,16 +349,21 @@ div.report-list {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.4vw;
 }
 div.report-list div.tab {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 3rem;
   border-radius: 0.3vw;
+  min-width: 12rem;
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all ease-in-out 0.3s;
   padding: 0.5vw 3vw 0.5vw 1vw;
   text-align: left;
-  line-height: 1.2vw;
 }
 div.report-list div.tab h1, div.report-list div.tab p {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -913,6 +921,49 @@ div.hr {
   margin-bottom: 2rem !important;
 }
 
+@media (max-width: 770px) {
+  div.report-wrapper div.centered {
+    display: none;
+  }
+  div.buttons {
+    flex-direction: column;
+  }
+  div.buttons button {
+    height: 4rem;
+    border-radius: 2rem;
+  }
+  div#app, div#app div.reports {
+    width: 100%;
+  }
+  div.full-analysis {
+    display: block;
+  }
+  div.content {
+    width: 100%;
+  }
+  div.trusted {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  div.trusted-list {
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr)) !important;
+  }
+  div.comment {
+    max-width: 30rem !important;
+  }
+  div.comment svg {
+    left: 5rem;
+    top: -2rem;
+  }
+  div.slider-wrapper {
+    max-width: 80rem;
+  }
+  div#sliderInfo, div#sliderInfo div.steps {
+    max-width: 80rem !important;
+  }
+}
 @keyframes changeBg {
   from {
     background-color: white;
