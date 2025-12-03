@@ -6,7 +6,7 @@ function FrontendSlider() {
         {id:2, image: "../images/slide_2.png", title:"Breyta", link:"../frontend/breyta/index.html", 
             desc: [<i>Лендинг.</i>,
                 "\n\nДля написания страницы использованы препроцессор SCSS, переменные, модули flex, grid, медиа-запрос @media и css-правила @font-face, @keyframes, JS-фреймворк Vue: \n• Переменные: для динамичного дизайна;\n• Flex, grid @keyframes: анимация\n• @font-face: подключение шрифтов (Tartuffo, Inter)\n• Vue: отображение отчёта в соответствии с выбранной темой; слайдер"],},
-        {id:3, image: "../images/slide_3.png", title:"Т-Холодильник", 
+        {id:3, image: "../images/slide_3.png", title:"Т-Холодильник", link:"../frontend/tfridge/index.html",
             desc: [<i>Хакатон</i>,
                 "\n\nДля написания страницы использованы фреймворк tailwind, переменные, модули grid, flex, ванильный JS: \n• Tailwind (flex, grid, md:): для динамичного дизайна;\n• JS: подключение к бэкенду; интерактивный дизайн"
             ]},
