@@ -1,0 +1,182 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — Meal Planner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: white;
+      color: #111827;
+    }
+  </style>
+</head>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#f6f7f8] border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex flex-row items-center">
+                        <div class="flex items-center justify-center">
+                            <img src="images/logo.svg" style="opacity: 1;"/>
+                        </div>
+                        <span class="font-semibold text-xl text-[#292929] ml-4">Т-Холодильник</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="hover:opacity-100 opacity-70 text-[#292929] transition-opacity duration-300">Возможности</a>
+                    <a href="#menu" class="hover:opacity-100 opacity-70 text-[#292929] transition-opacity duration-300">Меню</a>
+                    <a href="register.html" data-role="start-button" class="btn-primary text-[#292929] hover:text-[#94801b] px-6 py-2 rounded-full font-medium">
+                      Начать
+                    </a>  <!-- Личный кабинет -->
+                    <div id="account-wrapper" class="relative hidden"> 
+                        <button
+                          id="account-button"
+                          class="text-[#292929] border border-gray-200 rounded-full px-3 py-1.5 hover:border-[#126df7] hover:text-[#126df7] transition">
+                          Личный кабинет
+                        </button>
+                  
+                        <div
+                          id="account-dropdown"
+                          class="hidden absolute left-0 mt-2 w-40 bg-white rounded-xl shadow-lg border border-gray-100 py-2 text-sm z-50">
+                          <a href="menu.html" class="block px-3 py-1.5 hover:bg-gray-50">Меню</a>
+                          <a href="recipes.html" class="block px-3 py-1.5 hover:bg-gray-50">Рецепты</a>
+                          <a href="shopping.html" class="block px-3 py-1.5 hover:bg-gray-50">Продукты</a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                          <a href="#" id="logout-link" class="block px-3 py-1.5 text-red-500 hover:bg-gray-50">Выйти</a>
+                        </div>
+                    </div>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-white/90 backdrop-blur-2xl opacity-0 pointer-events-none transition-opacity duration-300 ease-out md:hidden">
+      <button id="mobile-menu-close" class="absolute top-5 right-5 p-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+  
+      <nav class="h-full flex flex-col items-center justify-center space-y-6">
+        <a href="#features" class="text-lg text-[#292929] hover:text-[#126df7] transition">Возможности</a>
+        <a href="#menu" class="text-lg text-[#292929] hover:text-[#126df7] transition">Меню</a>
+        <a href="register.html" data-mobile-auth="start" class="mt-10 inline-flex items-center justify-center px-8 py-2.5 text-lg text-[#292929] border border-[#292929] rounded-full hover:bg-[#292929] hover:text-white transition">  Начать</a>
+        <div id="mobile-auth-links" class="mt-10 space-y-4 hidden text-lg flex flex-col items-center justify-center">
+          <a href="menu.html" class="block text-[#292929] hover:text-[#126df7] transition">Локальное меню</a>
+          <a href="recipes.html" class="block text-[#292929] hover:text-[#126df7] transition">Рецепты</a>
+          <a href="shopping.html" class="block text-[#292929] hover:text-[#126df7] transition">Продукты</a>
+          <button id="mobile-logout" class="mt-4 inline-flex items-center justify-center px-8 py-2.5 border border-red-200 rounded-full text-red-500 hover:bg-red-50 transition">
+            Выйти
+          </button>
+        </div>
+      </nav>
+    </div>
+<body class="min-h-screen flex flex-col pt-10">
+  <main class="flex-1">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 py-10 lg:py-20 flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-20">
+      <section class="flex-1 max-w-xl">
+        <p class="text-sm font-medium text-[#ffdd2d] mb-3">
+          Добро пожаловать обратно
+        </p>
+
+        <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 mb-6">
+          Снова к<br />
+          <span class="inline-block mt-1">умному планированию</span>
+        </h1>
+
+        <p class="text-slate-600 text-base mb-8 max-w-md">
+          Войдите в аккаунт, чтобы продолжить работу с вашими меню, рецептами и продуктами.
+        </p>
+      </section>
+
+      <!-- Правая часть — вход -->
+      <section class="w-full max-w-md">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 px-6 py-7 sm:px-8 sm:py-9">
+          <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-2">
+            Вход
+          </h2>
+          <p class="text-sm text-slate-500 mb-6">
+            Введите никнейм и пароль, которые вы использовали при регистрации.
+          </p>
+
+          <form id="login-form" class="space-y-4">
+            <div>
+              <label class="block text-sm text-slate-600 mb-1.5" for="login-nickname">Никнейм</label>
+              <input
+                id="login-nickname"
+                name="nickname"
+                type="text"
+                required
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-400 transition"
+                placeholder="Например, foodlover"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-slate-600 mb-1.5" for="login-password">Пароль</label>
+              <input
+                id="login-password"
+                name="password"
+                type="password"
+                required
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400
+                       focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-400 transition"
+                placeholder="Ваш пароль"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="mt-2 w-full inline-flex justify-center items-center rounded-full bg-slate-900 text-white text-sm font-medium py-2.5
+                     hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-slate-900/20">
+              Войти
+            </button>
+          </form>
+
+          <p id="login-message" class="mt-4 text-xs text-slate-500"></p>
+
+          <p class="mt-4 text-xs text-slate-500">
+            Нет аккаунта? <a href="register.html" class="text-slate-900 underline">Зарегистрироваться</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+    <!-- Footer -->
+    <footer class="bg-[#292929] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center flex flex-col align-center justify-center">
+                <div class="flex items-center justify-center space-x-2 mb-5">
+                    <a href="index.html" class="flex flex-row items-center">
+                        <div class="flex items-center justify-center">
+                            <img src="images/logo.svg" style="opacity: 1;"/>
+                        </div>
+                        <span class="font-semibold text-xl text-white ml-4">Т-Холодильник</span>
+                    </a>
+                </div>
+                <p class="text-gray-400 mb-6">Планируйте меню, экономьте время, наслаждайтесь едой</p>
+                <div class="text-sm text-gray-500">
+                    © 2025 Т-главная-организация. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script src="js/auth.js"></script>
+  <script src="js/burger.js"></script>
+</body>
+</html>

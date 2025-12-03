@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукты - Т-Холодильник</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link href="css/styles_shopping.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+    <div class="flex-1 flex flex-col">
+    <nav class="fixed top-0 w-full z-50 bg-[#f6f7f8] border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex flex-row items-center">
+                        <div class="flex items-center justify-center">
+                            <img src="images/logo.svg" style="opacity: 1;"/>
+                        </div>
+                        <span class="font-semibold text-xl text-[#292929] ml-4">Т-Холодильник</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    
+                          <a href="menu.html" class="hover:opacity-100 opacity-70 text-[#292929] transition-opacity duration-300">Меню</a>
+                          <a href="recipes.html" class="hover:opacity-100 opacity-70 text-[#292929] transition-opacity duration-300">Рецепты</a>
+                          <a href="shopping.html" class="hover:opacity-100 opacity-70 text-[#292929] transition-opacity duration-300">Продукты</a>
+                    <a href="register.html" data-role="start-button" class="text-[#292929] hover:opacity-100 opacity-70 transition-opacity px-6 py-2 rounded-full font-medium">
+                      Начать
+                    </a>  <!-- Личный кабинет -->
+                    <div id="account-wrapper" class="relative hidden"> 
+                        <button
+                          id="account-button"
+                          class="text-[#292929] border border-gray-200 rounded-full px-3 py-1.5 hover:border-[#126df7] hover:text-[#126df7] transition">
+                          Личный кабинет
+                        </button>
+                  
+                        <div
+                          id="account-dropdown"
+                          class="hidden absolute left-0 mt-2 w-40 bg-white rounded-xl shadow-lg border border-gray-100 py-2 text-sm z-50">
+                          <a href="#" data-role="logout-link" class="block px-3 py-1.5 text-red-500 hover:bg-gray-50">Выйти</a>
+                        </div>
+                    </div>
+                </div>
+                <button id="mobile-menu-open" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="fixed inset-0 bg-white/80 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+      <div class="absolute top-4 right-4">
+        <button id="mobile-menu-close" class="p-2" aria-label="Закрыть меню">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="h-full flex flex-col items-center justify-center space-y-6 text-lg font-medium text-gray-800">
+        <a href="menu.html" class="mobile-menu-link hover:text-[#94801b] transition-colors duration-300">Меню</a>
+        <a href="recipes.html" class="mobile-menu-link hover:text-[#94801b] transition-colors duration-300">Рецепты</a>
+        <a href="shopping.html" class="mobile-menu-link hover:text-[#94801b] transition-colors duration-300">Продукты</a>
+        <a href="register.html" class="mobile-menu-link text-[#292929] border border-gray-300 px-6 py-2 rounded-full hover:border-[#94801b] hover:text-[#94801b] transition-colors duration-300">Начать</a>
+        <a href="#" id="logout-link" class="block px-3 py-1.5 text-red-500 hover:bg-gray-50">Выйти</a>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <section class="pt-28 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-4 pt-10">
+                    Продукты
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Умные списки покупок на основе вашего меню. Никогда не забудьте нужные продукты.
+                </p>
+            </div>
+
+            <!-- Progress Overview -->
+            <div class="">
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="text-3xl font-bold text-[#292929] mb-2" id="total-items">24</div>
+                    <div class="text-gray-600">Всего продуктов</div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Shopping List (без категорий) -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8">
+  <h2 class="text-2xl font-semibold text-gray-800">Список продуктов</h2>
+  <div class="flex space-x-3">
+    <button
+      type="button"
+      class="border-2 border-gray-300 text-[#292929] px-4 py-2 rounded-lg font-medium
+             hover:border-[#f5c400] hover:text-[#f5c400] transition-colors duration-200"
+      onclick="showAddItemModal()">
+      Добавить продукт
+    </button>
+
+    <button
+      type="button"
+      class="btn-primary text-[#292929] px-4 py-2 rounded-lg font-medium"
+      onclick="generateFromMenu()">
+      Сгенерировать из меню
+    </button>
+  </div>
+</div>
+
+
+            <div id="shopping-list-container" class="bg-white rounded-2xl p-6 shadow-lg">
+                <!-- Список продуктов будет сгенерирован JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Item Modal -->
+    <div id="add-item-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-3xl max-w-md w-full transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Добавить продукт</h3>
+                    
+                    <form id="add-item-form" class="space-y-4">
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-2">
+      Название продукта
+    </label>
+
+    <!-- подсказка -->
+    <p id="item-name-hint"
+       class="mt-1 mb-1 text-xs text-gray-500 hidden">
+      Введите название ингредиента на русском
+    </p>
+
+    <input
+      type="text"
+      id="item-name"
+      class="w-full px-4 py-2 border border-gray-300 rounded-xl
+             focus:outline-none focus:border-green-600"
+      placeholder="Например: Помидоры"
+      required
+    >
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700 mb-2">
+      Количество
+    </label>
+
+    <div class="relative">
+      <input
+        type="text"
+        id="item-quantity"
+        inputmode="numeric"
+        pattern="\d*"
+        class="w-full px-4 py-2 pr-16 border border-gray-300 rounded-xl
+               focus:outline-none focus:border-green-600"
+        placeholder="Например: 2"
+      >
+      <!-- сюда подставляется кг / л / шт и т.п. -->
+      <span
+        id="item-unit-label"
+        class="pointer-events-none absolute inset-y-0 right-4
+               flex items-center text-gray-500 text-sm">
+      </span>
+    </div>
+  </div>
+
+  <!-- КНОПКИ ВОЗВРАЩАЕМ СЮДА -->
+  <div class="flex space-x-3 pt-4">
+    <button
+      type="submit"
+      class="flex-1 btn-primary text-white py-2 rounded-xl font-medium">
+      Добавить
+    </button>
+    <button
+      type="button"
+      class="flex-1 border-2 border-gray-300 text-gray-700 py-2 rounded-xl font-medium
+             hover:border-green-600 hover:text-green-600 transition-all duration-300"
+      onclick="hideAddItemModal()">
+      Отмена
+    </button>
+  </div>
+</form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer class="bg-[#292929] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center flex flex-col align-center justify-center">
+                <div class="flex items-center justify-center space-x-2 mb-5">
+                    <a href="index.html" class="flex flex-row items-center">
+                        <div class="flex items-center justify-center">
+                            <img src="images/logo.svg" style="opacity: 1;"/>
+                        </div>
+                        <span class="font-semibold text-xl text-white ml-4">Т-Холодильник</span>
+                    </a>
+                </div>
+                <p class="text-gray-400 mb-6">Планируйте меню, экономьте время, наслаждайтесь едой</p>
+                <div class="text-sm text-gray-500">
+                    © 2025 Т-главная-организация. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="js/shopping.js"></script>
+    <script src="js/burger.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.getCurrentUser) {
+          console.log('shopping.html currentUser =', window.getCurrentUser());
+        }
+
+        const user = window.getCurrentUser ? window.getCurrentUser() : null;
+        if (user && (user.token || user.id)) {
+          document
+            .querySelectorAll('[data-role="start-button"]')
+            .forEach((btn) => btn.classList.add('hidden'));
+
+          const accountWrapper = document.getElementById('account-wrapper');
+          if (accountWrapper) {
+            accountWrapper.classList.remove('hidden');
+          }
+        }
+      });
+    </script>
+</body>
+</html>

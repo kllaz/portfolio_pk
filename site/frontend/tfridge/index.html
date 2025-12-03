@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Т-Холодильник - Планировщик меню и рецептов</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/splitting@1.0.6/dist/splitting.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b bg-white border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex flex-row items-center">
+                        <div class="flex items-center justify-center">
+                            <img src="images/logo.svg" style="opacity: 1;"/>
+                        </div>
+                        <span class="font-semibold text-xl text-[#292929] ml-4">Т-Холодильник</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="hover:opacity-100 opacity-70 text-[#292929] transition-opacity duration-300">Возможности</a>
+                    <a href="#menu" class="hover:opacity-100 opacity-70 text-[#292929] transition-opacity duration-300">Меню</a>
+                    <a href="register.html" data-role="start-button" class="btn-primary text-[#292929] hover:text-[#94801b] px-6 py-2 rounded-full font-medium">
+                      Начать
+                    </a>  <!-- Личный кабинет -->
+                    <div id="account-wrapper" class="relative hidden"> 
+                        <button
+                          id="account-button"
+                          class="text-[#292929] border border-gray-200 rounded-full px-3 py-1.5 hover:border-[#126df7] hover:text-[#126df7] transition">
+                          Личный кабинет
+                        </button>
+                  
+                        <div
+                          id="account-dropdown"
+                          class="hidden absolute left-0 mt-2 w-40 bg-white rounded-xl shadow-lg border border-gray-100 py-2 text-sm z-50">
+                          <a href="menu.html" class="block px-3 py-1.5 hover:bg-gray-50">Меню</a>
+                          <a href="recipes.html" class="block px-3 py-1.5 hover:bg-gray-50">Рецепты</a>
+                          <a href="shopping.html" class="block px-3 py-1.5 hover:bg-gray-50">Продукты</a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                          <a href="#" id="logout-link" class="block px-3 py-1.5 text-red-500 hover:bg-gray-50">Выйти</a>
+                        </div>
+                    </div>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-white/90 backdrop-blur-2xl opacity-0 pointer-events-none transition-opacity duration-300 ease-out md:hidden">
+      <button id="mobile-menu-close" class="absolute top-5 right-5 p-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <nav class="h-full flex flex-col items-center justify-center space-y-6">
+        <a href="#features" class="text-lg text-[#292929] hover:text-[#126df7] transition">Возможности</a>
+        <a href="#menu" class="text-lg text-[#292929] hover:text-[#126df7] transition">Меню</a>
+        <a href="register.html" data-mobile-auth="start" class="mt-10 inline-flex items-center justify-center px-8 py-2.5 text-lg text-[#292929] border border-[#292929] rounded-full hover:bg-[#292929] hover:text-white transition">  Начать</a>
+        <div id="mobile-auth-links" class="mt-10 space-y-4 hidden text-lg flex flex-col items-center justify-center">
+          <a href="menu.html" class="block text-[#292929] hover:text-[#126df7] transition">Локальное меню</a>
+          <a href="recipes.html" class="block text-[#292929] hover:text-[#126df7] transition">Рецепты</a>
+          <a href="shopping.html" class="block text-[#292929] hover:text-[#126df7] transition">Продукты</a>
+          <button id="mobile-logout" class="mt-4 inline-flex items-center justify-center px-8 py-2.5 border border-red-200 rounded-full text-red-500 hover:bg-red-50 transition">
+            Выйти
+          </button>
+        </div>
+      </nav>
+    </div>
+    <section class="hero-gradient min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
+                            <span class="block text-[#292929]">Планируй</span>
+                            <span class="block text-[#292929]" id="typed-text"></span>
+                            <span class="block text-[#292929]">с умом</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                            Создавайте персонализированные меню, управляйте запасами продуктов и получайте рецепты, 
+                            подходящие именно вам. Все в одном удобном приложении.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                          id="start-planning-btn"
+                          class="btn-primary text-[#292929] border-2 border-[#292929] px-8 py-4 transition-all duration-300 rounded-full font-semibold text-lg"
+                        >
+                          Начать планирование
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-8 pt-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-[#ffdd2d]">10K+</div>
+                            <div class="text-sm text-gray-600">Рецептов</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-[#ffdd2d]">50K+</div>
+                            <div class="text-sm text-gray-600">Пользователей</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-[#ffdd2d]">4.9</div>
+                            <div class="text-sm text-gray-600">Рейтинг</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="floating-element">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=800&fit=crop" 
+                             alt="Healthy meal planning" 
+                             class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-green-400 to-blue-500 rounded-full opacity-20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 back-grad">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-[#292929] mb-6">
+                    Все, что нужно для <span class="text-gradient">умного планирования</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    От рецептов до списков покупок - все в одном месте. Экономьте время, деньги и наслаждайтесь разнообразной едой.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <div class="w-8 h-8 rounded-full bg-[#ffdd2d] flex items-center justify-center">
+                            <svg class="w-8 h-8 text-[#333333] p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#292929] mb-4">Каталог рецептов</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        101 проверенный рецепт с подробными инструкциями, фото и советами от шеф-поваров.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <div class="w-8 h-8 rounded-full bg-[#ffdd2d] flex items-center justify-center">
+                            <svg class="w-8 h-8 text-[#333333] p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#292929] mb-4">Планирование меню</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Составляйте меню на день, неделю или месяц. Учитывайте предпочтения и ограничения в питании.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <div class="w-8 h-8 rounded-full bg-[#ffdd2d] flex items-center justify-center">
+                            <svg class="w-8 h-8 text-[#333333] p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#292929] mb-4">Списки покупок</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Автоматическое создание списков покупок на основе запланированного меню. Никогда не забудьте нужные продукты.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <div class="w-8 h-8 rounded-full bg-[#ffdd2d] flex items-center justify-center">
+                        <svg class="w-8 h-8 text-[#333333] p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#292929] mb-4">Учет запасов</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Отслеживайте продукты в холодильнике и кладовке. Получайте напоминания о сроках годности.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <div class="w-8 h-8 rounded-full bg-[#ffdd2d] flex items-center justify-center">
+                        <svg class="w-8 h-8 text-[#333333] p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#292929] mb-4">Умные рекомендации</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Получайте персонализированные рецепты на основе доступных продуктов и ваших предпочтений.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <div class="w-8 h-8 rounded-full bg-[#ffdd2d] flex items-center justify-center">
+                        <svg class="w-8 h-8 text-[#333333] p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#292929] mb-4">Мобильное приложение</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Доступ к вашим рецептам и спискам покупок в любом месте. Работает офлайн.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Menu Planning Section -->
+    <section id="menu" class="py-20 bg-gradient-to-br from-[#ffdd2d] to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-[#292929] mb-6">
+                    Планируйте меню <span class="text-gradient">за минуты</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Визуальный календарь поможет быстро распланировать питание на всю неделю
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-2xl p-8">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="grid grid-cols-7 gap-2 mb-6">
+                            <div class="text-center font-semibold text-gray-600 py-2">Пн</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Вт</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Ср</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Чт</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Пт</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Сб</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Вс</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-7 gap-2" id="calendar-grid">
+                            <!-- Calendar days will be generated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+    <div class="bg-gray-50 rounded-2xl p-6">
+        <h3 class="text-xl font-semibold text-[#292929] mb-4">Сегодня</h3>
+
+        <!-- сюда JS будет подставлять до 5 блюд -->
+        <div id="today-meals-list" class="space-y-2 text-sm text-gray-700">
+            <div class="text-sm text-gray-400">
+                Здесь появятся блюда, запланированные на сегодня.
+            </div>
+        </div>
+
+        <!-- ссылка "ещё..." на страницу меню -->
+        <a href="menu.html"
+           class="mt-4 inline-flex items-center text-sm font-medium text-[#126df7] hover:text-[#0f54c3]">
+            Ещё…
+        </a>
+    </div>
+
+    <button class="w-full btn-primary text-white py-3 rounded-xl font-semibold"
+            onclick="openMenuPlanner()">
+        Открыть планировщик
+    </button>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div id="start-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-3xl max-w-md w-full p-8 transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-[#ffdd2d] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-[#333333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#292929] mb-2">Начните планирование!</h3>
+                    <p class="text-gray-600">Создайте свой первый план питания и откройте мир вкусной еды</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <button class="w-full btn-primary text-gray-700 border-2 border-gray-300 hover:border-[#ffdd2d] hover:text-[#ffdd2d] py-3 rounded-xl font-semibold transition-all duration-300" onclick="window.location.href='login.html'">
+                        Воспользоваться существующим меню
+                    </button>
+                    <button class="w-full border-2 border-gray-300 text-gray-700 py-3 hover:border-[#ffdd2d] hover:text-[#ffdd2d] rounded-xl font-semibold transition-all duration-300" onclick="window.location.href='register.html'">
+                        Создать новое меню
+                    </button>
+                </div>
+                
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600" onclick="hideModal()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#292929] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center flex flex-col align-center justify-center">
+                <div class="flex items-center justify-center space-x-2 mb-5">
+                    <a href="index.html" class="flex flex-row items-center">
+                        <div class="flex items-center justify-center">
+                            <img src="images/logo.svg" style="opacity: 1;"/>
+                        </div>
+                        <span class="font-semibold text-xl text-white ml-4">Т-Холодильник</span>
+                    </a>
+                </div>
+                <p class="text-gray-400 mb-6">Планируйте меню, экономьте время, наслаждайтесь едой</p>
+                <div class="text-sm text-gray-500">
+                    © 2025 Т-главная-организация. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script type="text/babel" src="/js/react.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
