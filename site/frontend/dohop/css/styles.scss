@@ -1,0 +1,126 @@
+:root{
+    font-size: 16px;
+    --green: 148 70 34%;
+}
+@font-face {
+    font-family: 'Boogie School Sans High';
+    src: url('../fonts/BoogieSchoolSans/BoogieSchoolSans-High2nd.ttf') format('ttf'),
+    url('../fonts/BoogieSchoolSans/BoogieSchoolSans-High2nd.woff') format('woff'),
+    url('../fonts/BoogieSchoolSans/BoogieSchoolSans-High2nd.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Boogie School Sans High Bold';
+    src: url('../fonts/BoogieSchoolSans/BoogieSchoolSans-High4th.ttf') format('ttf'),
+    url('../fonts/BoogieSchoolSans/BoogieSchoolSans-High4th.woff') format('woff'),
+    url('../fonts/BoogieSchoolSans/BoogieSchoolSans-High4th.woff2') format('woff2');
+}
+h1{font-family: 'Boogie School Sans High Bold' sans-serif; font-size: 3.5rem; line-height: 90%;}
+a{color: black;}
+span.green{color: hsl(var(--green));}
+
+*, ::after, ::before{
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Boogie School Sans High', sans-serif;
+}
+body {
+    background-color: white;
+    width: 100%;
+    overflow-x: hidden;
+}
+header{
+    position: sticky;
+    top: 2rem;
+    padding: .7rem 1.5rem;
+    background-color: white;
+    margin: 0 auto;
+    max-width: 70rem;
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 5rem;
+    font-weight: 100;
+    z-index: 50;
+    div.brand-icon img{height: 2rem;}
+    div.header-wrapper{
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        div.links{gap:1.5rem;}
+        a{transition: color ease-in 0.2s;}
+        a:hover{color: hsl(var(--green));}
+        a.flex{gap: .5rem;}
+    }
+    button{
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 5rem;
+        font-size: 1.2rem;
+        display: flex;
+        gap: .5rem;
+        padding: 1rem;
+        transition: all .1s linear;
+    }
+    button:hover{
+        padding: 1.2rem;
+        transform: translateX(.2rem);
+    }
+}
+
+div.greeting{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    margin-bottom: 7.5rem;
+    h1{width: 50%; margin:0 auto}
+    .flex{
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        margin-top: 2rem;
+        p{
+            font-family: 'Boogie School Sans High Bold', sans-serif; 
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            img{width: 1.5rem; margin-left: 1rem;}
+        }
+        img{width: 90%;}
+    }
+}
+footer{
+    background-color: black;
+    color: white;
+    padding: 5rem 1rem 2rem 1rem;
+    border-radius: 3rem 3rem 0 0;
+    div.footer-wrapper{max-width: 70rem; margin: 0 auto;}
+    div.flexible-width{width: 100%;}
+    div.logos{justify-content: space-between;}
+    div.partner{align-items: center; p{width: 5rem;}}
+    a{color: white;}
+    .footer-logo{width: 20rem;}
+    .partner-logo{width: 5rem; height: 5rem;}
+}
+
+.svg-icon-anim{
+    position: relative;
+    img{
+        max-width: 600px;
+        width: 100%;
+    }
+}
+div#travelAnim{
+    position: absolute;
+    left: 55px; 
+    top: 63px;
+    width: 48px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.flex{display: flex;}
+.burger-app{width:2rem ;display: none;}
+
+@media (max-width: 990px) {
+    .burger-dis{display: none;}
+    .burger-app{display: block;}
+}

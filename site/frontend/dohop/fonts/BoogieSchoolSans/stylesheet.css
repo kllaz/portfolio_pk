@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'Boogie School Sans High 5th';
+    src: url('BoogieSchoolSans-High5th.eot');
+    src: local('Boogie School Sans High 5th'), local('BoogieSchoolSans-High5th'),
+        url('BoogieSchoolSans-High5th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-High5th.woff2') format('woff2'),
+        url('BoogieSchoolSans-High5th.woff') format('woff'),
+        url('BoogieSchoolSans-High5th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans High 2nd';
+    src: url('BoogieSchoolSans-High2nd.eot');
+    src: local('Boogie School Sans High 2nd'), local('BoogieSchoolSans-High2nd'),
+        url('BoogieSchoolSans-High2nd.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-High2nd.woff2') format('woff2'),
+        url('BoogieSchoolSans-High2nd.woff') format('woff'),
+        url('BoogieSchoolSans-High2nd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans High 4th';
+    src: url('BoogieSchoolSans-High4th.eot');
+    src: local('Boogie School Sans High 4th'), local('BoogieSchoolSans-High4th'),
+        url('BoogieSchoolSans-High4th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-High4th.woff2') format('woff2'),
+        url('BoogieSchoolSans-High4th.woff') format('woff'),
+        url('BoogieSchoolSans-High4th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Pre 4th';
+    src: url('BoogieSchoolSans-Pre4th.eot');
+    src: local('Boogie School Sans Pre 4th'), local('BoogieSchoolSans-Pre4th'),
+        url('BoogieSchoolSans-Pre4th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Pre4th.woff2') format('woff2'),
+        url('BoogieSchoolSans-Pre4th.woff') format('woff'),
+        url('BoogieSchoolSans-Pre4th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Middle 4th';
+    src: url('BoogieSchoolSans-Middle4th.eot');
+    src: local('Boogie School Sans Middle 4th'), local('BoogieSchoolSans-Middle4th'),
+        url('BoogieSchoolSans-Middle4th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Middle4th.woff2') format('woff2'),
+        url('BoogieSchoolSans-Middle4th.woff') format('woff'),
+        url('BoogieSchoolSans-Middle4th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans High 6th';
+    src: url('BoogieSchoolSans-High6th.eot');
+    src: local('Boogie School Sans High 6th'), local('BoogieSchoolSans-High6th'),
+        url('BoogieSchoolSans-High6th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-High6th.woff2') format('woff2'),
+        url('BoogieSchoolSans-High6th.woff') format('woff'),
+        url('BoogieSchoolSans-High6th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans High 3rd';
+    src: url('BoogieSchoolSans-High3rd.eot');
+    src: local('Boogie School Sans High 3rd'), local('BoogieSchoolSans-High3rd'),
+        url('BoogieSchoolSans-High3rd.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-High3rd.woff2') format('woff2'),
+        url('BoogieSchoolSans-High3rd.woff') format('woff'),
+        url('BoogieSchoolSans-High3rd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Middle 2nd';
+    src: url('BoogieSchoolSans-Middle2nd.eot');
+    src: local('Boogie School Sans Middle 2nd'), local('BoogieSchoolSans-Middle2nd'),
+        url('BoogieSchoolSans-Middle2nd.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Middle2nd.woff2') format('woff2'),
+        url('BoogieSchoolSans-Middle2nd.woff') format('woff'),
+        url('BoogieSchoolSans-Middle2nd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Middle 6th';
+    src: url('BoogieSchoolSans-Middle6th.eot');
+    src: local('Boogie School Sans Middle 6th'), local('BoogieSchoolSans-Middle6th'),
+        url('BoogieSchoolSans-Middle6th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Middle6th.woff2') format('woff2'),
+        url('BoogieSchoolSans-Middle6th.woff') format('woff'),
+        url('BoogieSchoolSans-Middle6th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Middle 5th';
+    src: url('BoogieSchoolSans-Middle5th.eot');
+    src: local('Boogie School Sans Middle 5th'), local('BoogieSchoolSans-Middle5th'),
+        url('BoogieSchoolSans-Middle5th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Middle5th.woff2') format('woff2'),
+        url('BoogieSchoolSans-Middle5th.woff') format('woff'),
+        url('BoogieSchoolSans-Middle5th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Middle 1st';
+    src: url('BoogieSchoolSans-Middle1st.eot');
+    src: local('Boogie School Sans Middle 1st'), local('BoogieSchoolSans-Middle1st'),
+        url('BoogieSchoolSans-Middle1st.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Middle1st.woff2') format('woff2'),
+        url('BoogieSchoolSans-Middle1st.woff') format('woff'),
+        url('BoogieSchoolSans-Middle1st.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Pre 1st';
+    src: url('BoogieSchoolSans-Pre1st.eot');
+    src: local('Boogie School Sans Pre 1st'), local('BoogieSchoolSans-Pre1st'),
+        url('BoogieSchoolSans-Pre1st.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Pre1st.woff2') format('woff2'),
+        url('BoogieSchoolSans-Pre1st.woff') format('woff'),
+        url('BoogieSchoolSans-Pre1st.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Pre 3rd';
+    src: url('BoogieSchoolSans-Pre3rd.eot');
+    src: local('Boogie School Sans Pre 3rd'), local('BoogieSchoolSans-Pre3rd'),
+        url('BoogieSchoolSans-Pre3rd.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Pre3rd.woff2') format('woff2'),
+        url('BoogieSchoolSans-Pre3rd.woff') format('woff'),
+        url('BoogieSchoolSans-Pre3rd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Pre 5th';
+    src: url('BoogieSchoolSans-Pre5th.eot');
+    src: local('Boogie School Sans Pre 5th'), local('BoogieSchoolSans-Pre5th'),
+        url('BoogieSchoolSans-Pre5th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Pre5th.woff2') format('woff2'),
+        url('BoogieSchoolSans-Pre5th.woff') format('woff'),
+        url('BoogieSchoolSans-Pre5th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Middle 3rd';
+    src: url('BoogieSchoolSans-Middle3rd.eot');
+    src: local('Boogie School Sans Middle 3rd'), local('BoogieSchoolSans-Middle3rd'),
+        url('BoogieSchoolSans-Middle3rd.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Middle3rd.woff2') format('woff2'),
+        url('BoogieSchoolSans-Middle3rd.woff') format('woff'),
+        url('BoogieSchoolSans-Middle3rd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Pre 2nd';
+    src: url('BoogieSchoolSans-Pre2nd.eot');
+    src: local('Boogie School Sans Pre 2nd'), local('BoogieSchoolSans-Pre2nd'),
+        url('BoogieSchoolSans-Pre2nd.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Pre2nd.woff2') format('woff2'),
+        url('BoogieSchoolSans-Pre2nd.woff') format('woff'),
+        url('BoogieSchoolSans-Pre2nd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans High 1st';
+    src: url('BoogieSchoolSans-High1st.eot');
+    src: local('Boogie School Sans High 1st'), local('BoogieSchoolSans-High1st'),
+        url('BoogieSchoolSans-High1st.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-High1st.woff2') format('woff2'),
+        url('BoogieSchoolSans-High1st.woff') format('woff'),
+        url('BoogieSchoolSans-High1st.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boogie School Sans Middle 7th';
+    src: url('BoogieSchoolSans-Middle7th.eot');
+    src: local('Boogie School Sans Middle 7th'), local('BoogieSchoolSans-Middle7th'),
+        url('BoogieSchoolSans-Middle7th.eot?#iefix') format('embedded-opentype'),
+        url('BoogieSchoolSans-Middle7th.woff2') format('woff2'),
+        url('BoogieSchoolSans-Middle7th.woff') format('woff'),
+        url('BoogieSchoolSans-Middle7th.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

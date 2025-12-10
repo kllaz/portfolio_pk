@@ -1,0 +1,184 @@
+:root {
+  font-size: 16px;
+  --green: 148 70 34%;
+}
+
+@font-face {
+  font-family: "Boogie School Sans High";
+  src: url("../fonts/BoogieSchoolSans/BoogieSchoolSans-High2nd.ttf") format("ttf"), url("../fonts/BoogieSchoolSans/BoogieSchoolSans-High2nd.woff") format("woff"), url("../fonts/BoogieSchoolSans/BoogieSchoolSans-High2nd.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Boogie School Sans High Bold";
+  src: url("../fonts/BoogieSchoolSans/BoogieSchoolSans-High4th.ttf") format("ttf"), url("../fonts/BoogieSchoolSans/BoogieSchoolSans-High4th.woff") format("woff"), url("../fonts/BoogieSchoolSans/BoogieSchoolSans-High4th.woff2") format("woff2");
+}
+h1 {
+  font-family: "Boogie School Sans High Bold" sans-serif;
+  font-size: 3.5rem;
+  line-height: 90%;
+}
+
+a {
+  color: black;
+}
+
+span.green {
+  color: hsl(var(--green));
+}
+
+*, ::after, ::before {
+  margin: 0;
+  text-decoration: none;
+  font-family: "Boogie School Sans High", sans-serif;
+}
+
+body {
+  background-color: white;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  position: sticky;
+  top: 2rem;
+  padding: 0.7rem 1.5rem;
+  background-color: white;
+  margin: 0 auto;
+  max-width: 70rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 5rem;
+  font-weight: 100;
+  z-index: 50;
+}
+header div.brand-icon img {
+  height: 2rem;
+}
+header div.header-wrapper {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+header div.header-wrapper div.links {
+  gap: 1.5rem;
+}
+header div.header-wrapper a {
+  transition: color ease-in 0.2s;
+}
+header div.header-wrapper a:hover {
+  color: hsl(var(--green));
+}
+header div.header-wrapper a.flex {
+  gap: 0.5rem;
+}
+header button {
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5rem;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  transition: all 0.1s linear;
+}
+header button:hover {
+  padding: 1.2rem;
+  transform: translateX(0.2rem);
+}
+
+div.greeting {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8rem;
+  margin-bottom: 7.5rem;
+}
+div.greeting h1 {
+  width: 50%;
+  margin: 0 auto;
+}
+div.greeting .flex {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+div.greeting .flex p {
+  font-family: "Boogie School Sans High Bold", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+div.greeting .flex p img {
+  width: 1.5rem;
+  margin-left: 1rem;
+}
+div.greeting .flex img {
+  width: 90%;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 5rem 1rem 2rem 1rem;
+  border-radius: 3rem 3rem 0 0;
+}
+footer div.footer-wrapper {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+footer div.flexible-width {
+  width: 100%;
+}
+footer div.logos {
+  justify-content: space-between;
+}
+footer div.partner {
+  align-items: center;
+}
+footer div.partner p {
+  width: 5rem;
+}
+footer a {
+  color: white;
+}
+footer .footer-logo {
+  width: 20rem;
+}
+footer .partner-logo {
+  width: 5rem;
+  height: 5rem;
+}
+
+.svg-icon-anim {
+  position: relative;
+}
+.svg-icon-anim img {
+  max-width: 600px;
+  width: 100%;
+}
+
+div#travelAnim {
+  position: absolute;
+  left: 55px;
+  top: 63px;
+  width: 48px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.burger-app {
+  width: 2rem;
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .burger-dis {
+    display: none;
+  }
+  .burger-app {
+    display: block;
+  }
+}/*# sourceMappingURL=styles.css.map */
