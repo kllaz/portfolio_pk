@@ -10,6 +10,9 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+<div class="copied">
+    <h1>copied from <a href="https://www.dohop.com/">dohop.com</a></h1>
+</div>
 <header>
     <div class="header-wrapper flex">
         <div class="brand-icon">
@@ -33,7 +36,7 @@
             </a>
             <a href="#">Contact us</a>
         </div>
-        <button class="burger-dis">
+        <button class="burger-dis move-arrow">
             <b>Help center</b>
             <img src="images/arrow_white.svg" alt="arrow" width="20">
         </button>
@@ -45,18 +48,18 @@
         <h1>We make connected travel <span class="green">simple</span></h1>
         <div class="flex">
             <div>
-                <a href="#">
+                <a href="#" class="move-arrow">
                     <div class="svg-icon-anim">
-                        <img src="images/travel.svg" alt="traveller image"/>
+                        <img src="images/travel.svg" alt="traveller image" />
                     </div>
                     <p >
                         For travellers
-                        <img src="images/arrow_black.svg" alt="arrow">
+                        <img src="images/arrow_black.svg" alt="arrow" class="arrow">
                     </p>
                 </a>
             </div>
             <div>
-                <a href="#">
+                <a href="#" class="move-arrow">
                     <div class="svg-icon-anim">
                         <img src="images/air.svg" alt="airplane image"/>
                     </div>
@@ -72,30 +75,79 @@
 <footer>
     <div class="footer-wrapper">
         <div class="flexible-width">
-        <div class="flex logos">
-            <div>
-                <img src="images/dohop_white.svg" alt="dohop" class="footer-logo"/>
+            <div class="flex logos">
+                <div>
+                    <img src="images/dohop_white.svg" alt="dohop" class="footer-logo"/>
+                </div>
+                <div class="partner flex">
+                    <p>Company partner</p>
+                    <img src="images/partner.png" alt="dohop" class="partner-logo"/>
+                </div>
             </div>
-            <div class="partner flex">
-                <p>Company partner</p>
-                <img src="images/partner.png" alt="dohop" class="partner-logo"/>
+            <div class="flex set-gap">
+                <div class="caption">
+                    <h2>We make connected travel simple</h2>
+                </div>
+                <div class="menu-list">    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Menu</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">Travellers</a></td>
+                                <td><a href="#">About us</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Airlines</a></td>
+                                <td><a href="#">Our partners</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">RetailConnect</a></td>
+                                <td><a href="#">Careers</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">ConnectAPI</a></td>
+                                <td><a href="#">News & Insights</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">ConnectSure</a></td>
+                                <td><a href="#">Contact us</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">BegConnect</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="connection">
+                    <p class="margin-bottom">Let's connect</p>
+                    <div class="image-link flex">
+                        <img src="images/in.png" alt="LinkedIn logo" style="filter: invert(100%);"/>
+                        <p class="service">LinkedIn</p>
+                    </div>
+                    <div class="image-link flex">
+                        <img src="images/star.png" alt="Trustpilot logo" />
+                        <p class="service">Trustpilot</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="flex">
-            <h2>We make connected travel simple</h2>
-            <table>
-
-            </table>
-        </div>
-        <div class="support-list flex">
-            <p>© 2024 Copyright Dohop</p>
-            <a href="#">Trust centre</a>
-            <a href="#">Equal pay policy</a>
-            <a href="#">Cookie policy</a>
-            <a href="#">Terms and conditions</a>
-        </div>
+            <div class="support-list flex">
+                <div>
+                    <p>© 2024 Copyright Dohop</p>
+                </div>
+                <div class="flex">
+                    <a href="#">Trust centre</a>
+                    <a href="#">Equal pay policy</a>
+                    <a href="#">Cookie policy</a>
+                    <a href="#">Terms and conditions</a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </body>

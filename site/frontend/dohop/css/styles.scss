@@ -65,7 +65,6 @@ header{
         transform: translateX(.2rem);
     }
 }
-
 div.greeting{
     text-align: center;
     margin-left: auto;
@@ -84,6 +83,9 @@ div.greeting{
             margin-top: 2rem;
             img{width: 1.5rem; margin-left: 1rem;}
         }
+        //a.move-arrow:hover{
+        //    img.arrow{transform: translateX(50%);}
+        //}
         img{width: 90%;}
     }
 }
@@ -93,12 +95,35 @@ footer{
     padding: 5rem 1rem 2rem 1rem;
     border-radius: 3rem 3rem 0 0;
     div.footer-wrapper{max-width: 70rem; margin: 0 auto;}
-    div.flexible-width{width: 100%;}
-    div.logos{justify-content: space-between;}
+    div.flexible-width{max-width: 70rem;}
+    div.logos{justify-content: space-between; margin-bottom: 2rem;}
     div.partner{align-items: center; p{width: 5rem;}}
     a{color: white;}
     .footer-logo{width: 20rem;}
     .partner-logo{width: 5rem; height: 5rem;}
+    div.flex.set-gap{margin-bottom: 2rem; width: 100%;}
+    div.caption{max-width: 15rem !important;}
+    div.caption h2{font-size: 2rem;}
+    table{
+        border-spacing: 8rem 1rem;
+        padding-right: 3rem;
+        th{text-align: left;}
+        td{width: max-content; font-size: 0.8rem; opacity: .8;}
+    }
+    table th, div.connection p:not(.service){font-weight: 600 !important; letter-spacing: .05rem;}
+    div.connection p.margin-bottom{margin-bottom: 1rem;}
+    div.image-link{
+        margin: 1rem 0;
+        align-items: center;
+        img{width: 1.5rem; margin-right: 1rem;}
+        p.service{font-size: .8rem;}
+    }
+    div.support-list{
+        justify-content: space-between; 
+        font-size: .8rem;
+        p{opacity: .8;}
+        div.flex{gap: 1.5rem;}
+    }
 }
 
 .svg-icon-anim{
@@ -115,6 +140,14 @@ div#travelAnim{
     width: 48px;
     height: 120px;
     overflow: hidden;
+}
+div.copied{
+    position: fixed;
+    opacity: .5;
+    top: 50%;
+    h1{font-size: 1rem; width: 20%;}
+    a{text-decoration: underline; transition: color .1s linear;}
+    a:hover{color: hsl(var(--green));}
 }
 
 .flex{display: flex;}

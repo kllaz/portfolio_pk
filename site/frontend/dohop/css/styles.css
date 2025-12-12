@@ -126,10 +126,11 @@ footer div.footer-wrapper {
   margin: 0 auto;
 }
 footer div.flexible-width {
-  width: 100%;
+  max-width: 70rem;
 }
 footer div.logos {
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 footer div.partner {
   align-items: center;
@@ -147,6 +148,57 @@ footer .partner-logo {
   width: 5rem;
   height: 5rem;
 }
+footer div.flex.set-gap {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+footer div.caption {
+  max-width: 15rem !important;
+}
+footer div.caption h2 {
+  font-size: 2rem;
+}
+footer table {
+  border-spacing: 8rem 1rem;
+  padding-right: 3rem;
+}
+footer table th {
+  text-align: left;
+}
+footer table td {
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+footer table th, footer div.connection p:not(.service) {
+  font-weight: 600 !important;
+  letter-spacing: 0.05rem;
+}
+footer div.connection p.margin-bottom {
+  margin-bottom: 1rem;
+}
+footer div.image-link {
+  margin: 1rem 0;
+  align-items: center;
+}
+footer div.image-link img {
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+footer div.image-link p.service {
+  font-size: 0.8rem;
+}
+footer div.support-list {
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+footer div.support-list p {
+  opacity: 0.8;
+}
+footer div.support-list div.flex {
+  gap: 1.5rem;
+}
 
 .svg-icon-anim {
   position: relative;
@@ -163,6 +215,23 @@ div#travelAnim {
   width: 48px;
   height: 120px;
   overflow: hidden;
+}
+
+div.copied {
+  position: fixed;
+  opacity: 0.5;
+  top: 50%;
+}
+div.copied h1 {
+  font-size: 1rem;
+  width: 20%;
+}
+div.copied a {
+  text-decoration: underline;
+  transition: color 0.1s linear;
+}
+div.copied a:hover {
+  color: hsl(var(--green));
 }
 
 .flex {
