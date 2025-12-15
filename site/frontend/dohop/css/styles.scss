@@ -157,3 +157,45 @@ div.copied{
     .burger-dis{display: none;}
     .burger-app{display: block;}
 }
+
+.scale-anim{
+    opacity:0;
+    animation: scaleAnim .7s ease forwards;
+}
+.slide-up-anim{
+    opacity: 0;
+    animation: slideUp .7s ease forwards;
+}
+.slide-down-anim{
+    opacity: 0;
+    animation: slideDown .7s ease forwards;
+}
+
+@keyframes scaleAnim {
+    0%{
+        opacity: 0;
+        transform: scale(.7);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+    0%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0%{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100%{
+        opacity: 1;
+    }
+}
